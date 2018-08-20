@@ -1,0 +1,240 @@
+---
+title: "Schedule"
+---
+
+**Click on the text like "Week 1: Jan 22 -- 26" to expand or collapse the items we covered in that week.**
+
+I will fill in more detail and provide links to lecture notes and labs as we go along.  Items for future dates are tentative and subject to change.
+
+```{r, echo = FALSE}
+make_week_box <- function(id, open, title, contents) {
+  cat('
+<div class="panel panel-default">
+<div class="panel-heading" role="tab" id="headingOne">
+<h5 class="mb-0">
+<a data-toggle="collapse" href="#',
+id,
+'" aria-expanded="true" aria-controls="collapseOne">
+',
+title,
+'</a>
+</h5>
+</div>
+
+<div id="',
+id,
+'" class="collapse',
+ifelse(open, " in", ""),
+'">
+<div class="panel-body">
+',
+contents,
+'
+</div>
+</div>
+</div>',
+  sep = "")
+}
+```
+
+```{r, echo = FALSE, results='asis'}
+make_week_box("week1", TRUE, "Week 1: Sep 5 -- 7",
+"Chapter 1: Observational Units, Categorical and Quantitative Variables
+
+#### Wed, Sept 5
+
+ * **In class**, we will work on:
+    * Introductory lab
+    * Here's a link to sign up for our class at gryd.us (this is the site where we will use R, you will need to do this to complete the lab): [not yet added...](https://example.com/not_yet_added)
+
+#### Fri, Sept 7
+"
+  )
+```
+
+```{r, echo = FALSE, results='asis'}
+make_week_box("week2", FALSE, "Week 2: Sep 10 -- 14",
+"
+
+#### Mon, Sep 10
+
+#### Thu, Feb 1
+
+#### Fri, Feb 2
+"
+  )
+```
+
+```{r, echo = FALSE, results='asis'}
+make_week_box("week3", FALSE, "Week 3: Sep 17 -- 21",
+"
+
+#### Mon, Sep 17
+
+#### Wed, Sep 19
+
+#### Fri, Sep 21
+"
+  )
+```
+
+```{r, echo = FALSE, results='asis'}
+make_week_box("week4", FALSE, "Week 4: Sep 24 -- 28",
+"
+
+#### Mon, Sep 24
+
+#### Wed, Sep 26
+
+#### Fri, Sep 28
+"
+  )
+```
+
+```{r, echo = FALSE, results='asis'}
+make_week_box("week5", FALSE, "Week 5: Oct 1 -- 5",
+"
+
+#### Mon, Oct 1
+
+#### Wed, Oct 3
+
+#### Fri, Oct 5
+"
+  )
+```
+
+```{r, echo = FALSE, results='asis'}
+make_week_box("week6", FALSE, "Week 6: Oct 8 -- 12",
+"
+
+#### Mon, Oct 8
+ * **No Class**: mid-semester break.  Safe travels!
+
+#### Wed, Oct 10
+
+#### Fri, Oct 12
+"
+  )
+```
+
+```{r, echo = FALSE, results='asis'}
+make_week_box("week7", FALSE, "Week 7: Oct 15 -- 19",
+"
+
+#### Mon, Oct 15
+
+#### Wed, Oct 17
+
+#### Fri, Oct 19
+"
+  )
+```
+
+```{r, echo = FALSE, results='asis'}
+make_week_box("week8", FALSE, "Week 8: Oct 22 -- 26",
+"
+#### Mon, Oct 22
+
+#### Wed, Oct 24
+
+#### Fri, Oct 26
+"
+  )
+```
+
+```{r, echo = FALSE, results='asis'}
+make_week_box("week9", FALSE, "Week 9: Oct 29 -- Nov 2",
+"
+
+#### Mon, Oct 29
+
+#### Wed, Oct 31
+
+#### Fri, Nov 2
+"
+  )
+```
+
+```{r, echo = FALSE, results='asis'}
+make_week_box("week10", FALSE, "Week 10: Nov 5 -- 9",
+"
+
+#### Mon, Nov 5
+
+#### Wed, Nov 7
+
+#### Fri, Nov 9
+"
+  )
+```
+
+```{r, echo = FALSE, results='asis'}
+make_week_box("week11", FALSE, "Week 11: Nov 12 -- 16",
+"
+
+#### Mon, Nov 12
+
+#### Wed, Nov 14
+
+#### Fri, Nov 16
+"
+  )
+```
+
+```{r, echo = FALSE, results='asis'}
+make_week_box("week12", FALSE, "Week 12: Nov 19 -- 23 (Thanksgiving)",
+"
+
+#### Mon, Nov 19
+
+#### Wed, Nov 21
+* **No Class**: Thanksgiving break.  Safe travels!
+
+#### Fri, Nov 23
+* **No Class**: Thanksgiving break.  Safe travels!
+"
+  )
+```
+
+```{r, echo = FALSE, results='asis'}
+make_week_box("week13", FALSE, "Week 13: Nov 26 -- 30",
+"
+
+#### Mon, Nov 26
+
+#### Wed, Nov 28
+
+#### Fri, Nov 30
+"
+)
+```
+
+```{r, echo = FALSE, results='asis'}
+make_week_box("week14", FALSE, "Week 14: Dec 3 -- 7",
+"
+
+#### Mon, Dec 3
+
+#### Wed, Dec 5
+
+#### Fri, Dec 7
+"
+  )
+```
+
+```{r, echo = FALSE, results='asis'}
+make_week_box("week15", FALSE, "Week 15: Dec 10",
+"
+
+#### Mon, Dec 10
+"
+  )
+```
+
+```{r, echo = FALSE, results='asis'}
+make_week_box("finals", TRUE, "Final Exams: Fri, Dec 14 at 7pm -- Tue, Dec 18 at noon",
+"We will have a cumulative final exam.
+"
+  )
+```
