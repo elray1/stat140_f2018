@@ -12,7 +12,7 @@ title: "Introduction to Statistics"
 
 **Evening Group Work**: We have scheduled rooms for evening group work, with TAs available to help with questions, on **days to be determined**.  These sessions will meet in **room to be determined**.
 
-**Piazza:** We have a Piazza page at [address to be determined, not yet working](https://piazza.com/mtholyoke/fall2018/stat140).  You can ask and answer questions there, anonymously if you want, and everyone in the class will be able to see and contribute to the answers.
+**Piazza:** We have a Piazza page at [https://piazza.com/mtholyoke/fall2018/stat140](https://piazza.com/mtholyoke/fall2018/stat140).  You can ask and answer questions there, anonymously if you want, and everyone in the class will be able to see and contribute to the answers.
 
 **Syllabus:** [pdf](syllabus/syllabus_stat_140.pdf)
 

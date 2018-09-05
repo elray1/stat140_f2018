@@ -2,7 +2,7 @@
 title: "Schedule"
 ---
 
-**Click on the text like "Week 1: Jan 22 -- 26" to expand or collapse the items we covered in that week.**
+**Click on the text like "Week 1: Sep 5 -- 7" to expand or collapse the items we covered in that week.**
 
 I will fill in more detail and provide links to lecture notes and labs as we go along.  Items for future dates are tentative and subject to change.
 
@@ -44,10 +44,22 @@ make_week_box("week1", TRUE, "Week 1: Sep 5 -- 7",
 #### Wed, Sept 5
 
  * **In class**, we will work on:
-    * Introductory lab
-    * Here's a link to sign up for our class at gryd.us (this is the site where we will use R, you will need to do this to complete the lab): [not yet added...](https://example.com/not_yet_added)
+    * Introductory lab: [pdf](materials/20180904_intro/20180904Intro.pdf)
+    * Here's a link to sign up for our class at gryd.us (this is the site where we will use R, you will need to do this to complete the lab): [https://beta.gryd.us/course/3wwAgQ39gQHjApaijRcWTE/register/](https://beta.gryd.us/course/3wwAgQ39gQHjApaijRcWTE/register/)
+        * **Important**: Please use your mtholyoke.edu email address to register for this site!  Otherwise you will have to pay... :(
+ * **After class**, please do the following:
+    * **Fill out** a brief pre-course [questionairre](https://goo.gl/forms/uaQwDv6PFuoT0PD43)
+    * **Fill out** this poll about when my office hours should be held: [http://whenisgood.net/d8wmb4z](http://whenisgood.net/d8wmb4z)
+    * Sign up for our class at gryd.us if you didn't already (this is the site where we will use R): [https://beta.gryd.us/course/3wwAgQ39gQHjApaijRcWTE/register/](https://beta.gryd.us/course/3wwAgQ39gQHjApaijRcWTE/register/)
+    * Sign up for our class at Piazza (anonymous question and answer forum): [https://piazza.com/mtholyoke/fall2018/stat140](https://piazza.com/mtholyoke/fall2018/stat140)
+    * **Reading**: Read Chapter 1 of Stats: Data and Models 4th edition, or Chapter 2 of the 3rd edition
+    * **Homework 1**: Complete 4 [DataCamp](https://www.datacamp.com) chapters from the Introduction to R course: Intro to basics, Vectors, Factors, and Data frames.  You will get an email by the end of the day on Sept 5 inviting you to join our class organization with an assignment pointing you to the specific chapters to do.  You should **feel free to work on this in groups** -- but please **each complete your own copy of this assignment**!  Your grade on this assignment is only for completion, not correctness.  If you get stuck, post a message on Piazza!  I don't expect you to remember everything or feel like an expert at it; that's what the rest of the class is for!  This is just a first introduction.
 
 #### Fri, Sept 7
+
+ * **In class**, we will work on:
+    * Matching up ideas from the textbook and the data camp assignment.
+    * Introduction to R and Categorical Data lab on Gryd.
 "
   )
 ```
