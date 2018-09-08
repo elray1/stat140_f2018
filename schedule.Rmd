@@ -60,19 +60,50 @@ make_week_box("week1", TRUE, "Week 1: Sep 5 -- 7",
  * **In class**, we will work on:
     * Matching up ideas from the textbook and the data camp assignment.
     * Introduction to R and Categorical Data lab on Gryd.
+ * **After class**, please do the following:
+    * **Read**:
+        * Stats: Data and Models 4th edition: Chapter 2, or
+        * Stats: Data and Models 3rd edition: Chapter 3
+    * Start on **Homework 2**: Data camp assignment about \"Introduction to the Tidyverse\", due Wednesday Sep 12.
 "
   )
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week2", FALSE, "Week 2: Sep 10 -- 14",
+make_week_box("week2", TRUE, "Week 2: Sep 10 -- 14",
 "
 
 #### Mon, Sep 10
+ * **In class**, we will work on:
+    * Wrap-up of lab from Friday; things to know about R so far.
+    * Material from Chapter 2 and related R functionality:
+        * Worked example as a class of finding Joint, Marginal, and Conditional distributions based on a sample; Independence.
+        * The `count` function in R
+        * Example in groups
+ * **After class**, please do the following:
+    * **Read**:
+        * Stats: Data and Models 4th edition: Chapters 3 and 4, or
+        * Stats: Data and Models 3rd edition: Chapters 4 and 5
+    * Finish **Homework 2**: Data camp assignment about \"Introduction to the Tidyverse\", due Wednesday Sep 12.
 
-#### Thu, Feb 1
+#### Wed, Sep 12
+ * **In class**, we will work on:
+    * Material from Chapters 3 and 4 and related R functionality:
+        * Brief recap of data visualization with ggplot2
+        * Start on a lab about data visualizations and calculating quantitative summaries of data
+ * **After class**, please do the following:
+    * No new work outside of class.
 
-#### Fri, Feb 2
+#### Fri, Sep 14
+ * **In class**, we will work on:
+    * Material from Chapters 3 and 4 and related R functionality:
+        * Brief recap of data summarization functions in dplyr
+        * Finish a lab about data visualizations and calculating quantitative summaries of data
+ * **After class**, please do the following:
+    * **Read**:
+        * Stats: Data and Models 4th edition: Sections 6.1 through 6.3 (but not the sections about Kendall’s Tau or Spearman’s Rho; also, we won't be calculating correlation by hand, so don't worry about those calculations - we will want to understand its properties and what it does and does not tell us), or
+        * Stats: Data and Models 3rd edition: Chapter 7 (but not the sections about Kendall’s Tau, Spearman’s Rho, or Straightening Scatterplots; also, we won't be calculating correlation by hand, so don't worry about those calculations - we will want to understand its properties and what it does and does not tell us)
+    * Start on **Homework 3**: Assignment covering Chapters 1 -- 4, on Gryd, due Friday Sep 21.
 "
   )
 ```
@@ -82,6 +113,8 @@ make_week_box("week3", FALSE, "Week 3: Sep 17 -- 21",
 "
 
 #### Mon, Sep 17
+ * **In class**, we will work on:
+    * Material from Chapter 6 (4th edition) or Chapter 7 (3rd edition)
 
 #### Wed, Sep 19
 
