@@ -1,0 +1,12 @@
+base
+readr
+dplyr
+bindrcpp
+lattice
+ggplot2
+ggstance
+ggformula
+mosaicData
+Matrix
+mosaic
+tidyr
