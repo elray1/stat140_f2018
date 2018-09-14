@@ -96,7 +96,7 @@ make_week_box("week2", TRUE, "Week 2: Sep 10 -- 14",
 #### Fri, Sep 14
  * **In class**, we will work on:
     * More about visualization:
-        * Understqnding and interpreting common types of plots
+        * Understanding and interpreting common types of plots: [pdf](materials/20180914_visualizations/20180914_visualizations.pdf)
         * Finish data visualizations part of lab 02
  * **After class**, please do the following:
     * Start on **Homework 3**: Assignment covering Chapters 1 -- 2 and data visualizations, on Gryd, due Wednesday Sep 19.
@@ -112,7 +112,7 @@ make_week_box("week3", FALSE, "Week 3: Sep 17 -- 21",
  * **In class**, we will work on:
     * Brief recap of all functionality related to reading in and summarizing data in R so far: [pdf](resources/data_loading_summarizing/data_loading_summarizing.pdf)
     * Overview of when to use mean/median, standard deviation/IQR.
-    * Finish the whole Bechdel test lab
+    * Finish the whole Bechdel test lab; please submit by the end of the day today.
  * **After class**, please do the following:
     * **Read**:
         * Stats: Data and Models 4th edition: Sections 6.1 through 6.3 (but not the sections about Kendall’s Tau or Spearman’s Rho; also, we won't be calculating correlation by hand, so don't worry about those calculations - we will want to understand its properties and what it does and does not tell us), or
