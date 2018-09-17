@@ -1,0 +1,173 @@
+---
+title: "R Commands for Quantitative Variables"
+author: ''
+date: "September 17, 2018"
+output:
+  pdf_document:
+    keep_tex: true
+    fig_height: 3
+    fig_width: 5
+  html_document:
+    fig_height: 3
+    fig_width: 5
+  word_document:
+    fig_height: 3
+    fig_width: 5
+header-includes:
+   - \usepackage{booktabs}
+documentclass: extarticle
+classoption: 14pt
+geometry: margin=0.6in
+---
+
+
+```{r, include=FALSE, message = FALSE}
+# Don't delete this chunk if you are using the mosaic package
+# This loads the mosaic and dplyr packages
+library(readr)
+library(dplyr)
+require(mosaic)
+library(grid)
+```
+
+```{r, include=FALSE, message = FALSE}
+# Some customization.  You can alter or delete as desired (if you know what you are doing).
+
+# This changes the default colors in lattice plots.
+trellis.par.set(theme=theme.mosaic())  
+
+# knitr settings to control how R chunks work.
+require(knitr)
+opts_chunk$set(
+  tidy=FALSE,     # display code as typed
+  size="small"    # slightly smaller font for code
+)
+
+require(fivethirtyeight)                
+```
+
+
+## Birth Weights and Tobacco Use During Pregnancy
+
+Are babies' birth weights affected by whether or not the mother used tobacco during pregnancy?  Low birth weights are a risk factor for health problems later in life, so this is important!
+
+Here is a data set with data on a sample of randomly selected babies who were born in North Carolina in 2004, with some information about the mother and the babies' weights in grams:
+
+```{r, echo = FALSE, message = FALSE}
+library(resampledata)
+NCBirths2004 <- NCBirths2004[, 1:7]
+```
+
+```{r}
+dim(NCBirths2004)
+head(NCBirths2004)
+```
+
+Here's a plot of the data:
+
+```{r, echo = FALSE}
+ggplot(data = NCBirths2004, mapping = aes(x = Weight, color = Tobacco)) +
+  geom_density()
+```
+
+### Warm Up #1: What did the code to make that plot look like?  Fill in the blanks below.
+
+There are 4 blanks: what was used for data? For the aesthetic mapping to x?  For the aesthetic mapping to color?  For the geometry?
+
+```{r, echo = TRUE, eval = FALSE}
+ggplot(data =                  ,
+    mapping = aes(x =                , color =                 )) +
+  geom_                   ()
+```
+
+\vspace{1cm}
+
+### Warm Up #2: What statistics would you use to summarize the center and spread of the distribution of birth weights within each group?
+
+\newpage
+
+## Calculating Summaries of Quantitative Variables: `summarize` and `group_by`
+
+We saw from the plot that there seems to be a difference in birth weights.  What are "typical" birth weights for the two groups?
+
+```{r}
+NCBirths2004 %>%
+  group_by(Tobacco) %>%
+  summarize(
+    mean_wt = mean(Weight),
+    median_wt = median(Weight),
+    q1_wt = quantile(Weight, probs = 0.25),
+    q3_wt = quantile(Weight, probs = 0.75),
+    iqr_wt = IQR(Weight),
+    var_wt = var(Weight),
+    sd_wt = sd(Weight)
+  )
+```
+
+### Note: if we wanted to just calculate these summaries for all babies combined (across both groups), we would eliminate the `group_by` command:
+
+```{r}
+NCBirths2004 %>%
+  summarize(
+    mean_wt = mean(Weight),
+    median_wt = median(Weight),
+    q1_wt = quantile(Weight, probs = 0.25),
+    q3_wt = quantile(Weight, probs = 0.75),
+    iqr_wt = IQR(Weight),
+    var_wt = var(Weight),
+    sd_wt = sd(Weight)
+  )
+```
+
+\newpage
+
+## Sorting the data: `arrange`
+
+### What was the shortest gestation time?
+
+To answer this question, we will `arrange` the babies in increasing order of gestation time.  Then, the babies with the shortest gestation times will be near the `head` of the data frame.
+
+```{r}
+NCBirths_by_gestation <- NCBirths2004 %>%
+  arrange(Gestation)
+
+head(NCBirths_by_gestation)
+```
+
+\vspace{1cm}
+
+### What was the longest gestation time?
+
+Now we want to `arrange` the babies in `desc`ending order of gestation time, so the longest gestation times will be at the `head` of the data frame:
+
+```{r}
+NCBirths_by_gestation_descending <- NCBirths2004 %>%
+  arrange(desc(Gestation))
+
+head(NCBirths_by_gestation_descending)
+```
+
+\vspace{1cm}
+
+\newpage
+
+## Modifying or Adding a Variable: `mutate`
+
+The babies' birth `Weights` are currently recorded in grams.  Let's add a new variable to the data frame called `Weight_lbs` with the babies' birth weights in pounds.
+
+There are about 453.6 grams in a pound.  We can divide the weight in grams by 453.6 to get the weight in pounds.
+
+```{r}
+NCBirths2004 <- NCBirths2004 %>%
+  mutate(
+    Weight_lbs = Weight / 453.6
+  )
+```
+
+As usual, we can take a look at the results by looking at the output from `head` or `str`.
+
+```{r}
+head(NCBirths2004)
+```
+
+
