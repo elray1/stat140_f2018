@@ -38,7 +38,7 @@ contents,
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week1", TRUE, "Week 1: Sep 5 -- 7",
+make_week_box("week1", FALSE, "Week 1: Sep 5 -- 7",
 "Chapter 1: Observational Units, Categorical and Quantitative Variables
 
 #### Wed, Sept 5
@@ -70,7 +70,7 @@ make_week_box("week1", TRUE, "Week 1: Sep 5 -- 7",
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week2", TRUE, "Week 2: Sep 10 -- 14",
+make_week_box("week2", FALSE, "Week 2: Sep 10 -- 14",
 "
 
 #### Mon, Sep 10
@@ -105,20 +105,23 @@ make_week_box("week2", TRUE, "Week 2: Sep 10 -- 14",
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week3", FALSE, "Week 3: Sep 17 -- 21",
+make_week_box("week3", TRUE, "Week 3: Sep 17 -- 21",
 "
 
 #### Mon, Sep 17
  * **In class**, we will work on:
-    * Brief recap of all functionality related to reading in and summarizing data in R so far: [pdf](resources/data_loading_summarizing/data_loading_summarizing.pdf)
-    * Overview of when to use mean/median, standard deviation/IQR.
+    * When to use mean/median, standard deviation/IQR. [pdf](materials/20180917_summaries/20180917_summaries.pdf)
+    * R commands for dealing with quantitative variables. [pdf](materials/20180917_summaries/20180917_R_commands_quantitative.pdf)
+    * Brief recap of all functionality related to reading in and summarizing data in R so far (see Resources tab)
     * Finish the whole Bechdel test lab; please submit by the end of the day today.
  * **After class**, please do the following:
+    * **Homework 3**: Assignment covering Chapters 1 -- 2 and data visualizations, on Gryd, due Wednesday Sep 19.
     * **Read**:
         * Stats: Data and Models 4th edition: Sections 6.1 through 6.3 (but not the sections about Kendall’s Tau or Spearman’s Rho; also, we won't be calculating correlation by hand, so don't worry about those calculations - we will want to understand its properties and what it does and does not tell us), or
         * Stats: Data and Models 3rd edition: Chapter 7 (but not the sections about Kendall’s Tau, Spearman’s Rho, or Straightening Scatterplots; also, we won't be calculating correlation by hand, so don't worry about those calculations - we will want to understand its properties and what it does and does not tell us)
 
 #### Wed, Sep 19
+ * **Homework 3 due!**
  * **In class**, we will work on:
     * Material from Chapter 6 (4th edition) or Chapter 7 (3rd edition)
 
