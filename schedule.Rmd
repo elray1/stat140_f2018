@@ -123,9 +123,18 @@ make_week_box("week3", TRUE, "Week 3: Sep 17 -- 21",
 #### Wed, Sep 19
  * **Homework 3 due!**
  * **In class**, we will work on:
-    * Material from Chapter 6 (4th edition) or Chapter 7 (3rd edition)
+    * Material from Chapter 6 (4th edition); or Chapter 7 (3rd edition)
+    * Thinking about the relationship between 2 quantitative variables: scatter plots and correlation [pdf](materials/20180919_scatterplots_correlation/20180919_correlation_summary.pdf)
+    * Building some intuition about what correlation means: [pdf](materials/20180919_scatterplots_correlation/20180919_plots_correlation.pdf)
+    * Lab03 on Gryd: practice working with scatter plots and correlation.
+ * **After class**, please:
+    * **Read**:
+        * Stats: Data and Models 4th edition: Chapter 11
+        * Stats: Data and Models 4th edition: Chapter 12
 
 #### Fri, Sep 21
+ * **In class**, we will work on:
+    * Material from Chapter 11 (4th edition); or Chapter 12 (3rd edition)
 "
   )
 ```
