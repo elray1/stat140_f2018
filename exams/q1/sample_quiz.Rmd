@@ -1,0 +1,82 @@
+---
+title: "Stat 140 - Quiz 1 Sample"
+output: pdf_document
+header-includes:
+   - \usepackage{soul}
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(eval = TRUE)
+library(dplyr)
+library(ggplot2)
+```
+
+## What's Your Name? __________________________________
+
+## Which section are you in? _______________________________
+
+\textbf{This is a sample quiz.  For the real quiz, I will use a different data set, but will ask the questions below about the new data set with minimal modification.}
+
+Below are the first few rows of a data frame named \texttt{NHANES}.  NHANES stands for "National Health and Nutrition Examination Surveys", and the data frame contains information about the health of randomly sampled Americans.
+
+```{r, load_data, message = FALSE, echo = FALSE}
+library(NHANES)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(mosaic)
+
+NHANES <- NHANES[, c(1, 3, 4, 17, 20, 21, 25, 26, 40)]
+NHANES <- as.data.frame(NHANES)
+NHANES <- distinct(NHANES)
+```
+
+```{r, message=FALSE, echo = FALSE}
+head(NHANES)
+```
+
+### 1. What is each observational unit in this data set?
+
+\vspace{2cm}
+
+### 2. For each of the following variables, is that variable categorical or quantitative?  If it is categorical, is it ordinal or nominal?
+
+* `Gender`
+* `Height`
+* `Diabetes`
+
+### 3. The following command counts how many observational units are in each combination of levels of the gender and diabetes variables.
+
+```{r, echo = FALSE}
+NHANES_orig <- NHANES
+NHANES <- NHANES %>% filter(!is.na(Diabetes))
+```
+
+```{r}
+NHANES %>%
+  count(Diabetes, Gender) %>%
+  spread(Gender, n)
+```
+
+```{r, echo = FALSE}
+NHANES <- NHANES_orig
+```
+
+#### a. Calculate the joint distribution of Diabetes and Gender
+
+\vspace{3cm}
+
+#### b. Calculate the marginal distribution of Diabetes
+
+\vspace{3cm}
+
+#### c. Calculate the conditional distribution of Diabetes given that the subject's Gender is male
+
+\vspace{3cm}
+
+#### d. Calculate the conditional distribution of Diabetes given that the subject's Gender is female
+
+\vspace{3cm}
+
+#### e. Is a person's Diabetes status independent of their Gender?
+

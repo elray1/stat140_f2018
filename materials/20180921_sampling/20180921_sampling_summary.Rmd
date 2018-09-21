@@ -1,0 +1,95 @@
+---
+title: "Sampling: Summary"
+author: ""
+date: ""
+output:
+  pdf_document:
+    fig_height: 3
+    fig_width: 5
+header-includes:
+   - \usepackage{booktabs}
+   - \usepackage{multicol}
+documentclass: extarticle
+classoption: 14pt
+geometry: margin=0.6in
+---
+
+<style>
+  .col2 {
+    columns: 2 200px;         /* number of columns and width in pixels*/
+    -webkit-columns: 2 200px; /* chrome, safari */
+    -moz-columns: 2 200px;    /* firefox */
+  }
+  .col3 {
+    columns: 3 100px;
+    -webkit-columns: 3 100px;
+    -moz-columns: 3 100px;
+  }
+</style>
+
+```{r setup, include=FALSE}
+require(ggplot2)
+require(grid)
+require(dplyr)
+require(tidyr)
+```
+
+\vspace{-1.5cm}
+
+## The Course So Far: Describe Observations in a Sample
+
+\vspace{-0.5cm}
+
+\begin{table}[!h]
+\begin{tabular}{p{3.5cm} p{3cm} p{10cm}}
+\toprule
+Variable Type(s) & Plot & Numeric Summary \\
+\midrule
+1 Categorical & Bar & (Marginal) distribution \\
+\midrule
+2 Categorical & Bar & Joint Distribution, Conditional Distribution \\
+\midrule
+1 Quantitative & Histogram or Density & mean, median, quantiles, standard deviation, variance, IQR \\
+\midrule
+1 Categorical, 1 Quantitative & Density Plot or Box Plot & summary statistics of the quantitative variable for each level of the categorical variable \\
+\midrule
+2 Quantitative & Scatter Plot & correlation \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{-0.5cm}
+
+## From Now On: Use Observations in a Sample to Estimate Something about a Population
+
+\vspace{-0.5cm}
+
+**Population Parameter**: a number summarizing a variable across the whole population
+
+**Sample Statistic**: a number summarizing a variable for the sample
+
+Our Hope: The sample statistic will be a good estimate of the population parameter.
+
+\includegraphics{pop-sample.png}
+
+## How Do We Get Our Sample?
+
+\includegraphics{sample_types.pdf}
+
+## Bias
+
+ * For the sample statistic to be a good estimate of the population parameter, the sample needs to be **representative** of the population.
+ * Definition: Sampling methods that tend to over-emphasize or under-emphasize some characteristics of the population are **biased**.
+ * Common sources of bias:
+    * **Sample Volunteers/Convenience Sampling**: just include people in the sample who are easy to recruit
+    * **Bad Sampling Frame/Undercoverage**: only choose your sample from among a subset of the population
+    * **Nonresponse**: some people selected for your sample choose not to respond
+    * **Response bias**: your phrasing or survey design encourages people to answer a certain way
+
+## Sampling Variabilty
+
+ * Every sample you take is different!
+ * Imagine taking 10 different samples of people in the US
+ * Each group of people you select will have different numbers who support the president
+ * So each sample will have a different sample statistic (different proportion of the sample who support the president).
+ * Definition: The **sampling distribution** is the distribution of values of the sample statistic that you would get from all possible samples of a given size.  (We will explore this more in the lab today and in Chapter 17.)
