@@ -1,0 +1,80 @@
+---
+title: "Stat 140 Experiments and Observational Studies"
+author: "Evan Ray"
+date: "September 24, 2018"
+output:
+  pdf_document:
+    fig_height: 2.8
+    fig_width: 6
+  html_document:
+    fig_height: 3
+    fig_width: 5
+  word_document:
+    fig_height: 3
+    fig_width: 5
+---
+## Abstract 1
+
+After reading the abstract of "Meditation or Exercise for Preventing Acute Respiratory Infection: A Randomized Controlled Trial", answer the following questions:
+
+#### 1. Is this an observational study or an experiment?
+
+This is an experiment since the subjects were randomly assigned to the treatment groups.
+
+#### 2. What are the explanatory and response variables?
+
+The explanatory variable is what the subject did.  This is one variable with three levels: nothing (control group), exercise, or meditation.
+
+The response variables were several different measures of the duration and severity of acute respiratory illness the subjects developed.
+
+#### 3. In what way was randomization used in the study?
+
+The subjects were randomly assigned to the control, exercise, or meditation groups.
+
+#### 4. What were the treatments used in the study?
+
+The treatments were: 1. meditation; 2. exercise; or 3. no intervention.
+
+#### 5. What sources of bias might be present?
+
+Bias is present when the sample statistics calculated from a sample are not representative of the corresponding population parameters.
+
+Disease status came from a self-report questionnaire.  People may have filled out this questionnaire incorrectly, leading to response bias.
+
+From the "Recruitment and Monitoring" subsection of the methods section, we see that the subjects were volunteers.  With volunteer subjects, it is always possible that there could be a systematic difference between the subject participants and the general population.  For example, perhaps the people who volunteered for the study are more concerned about the flu, and their health and self-care routines will be different than the general population.  On the other hand, from the "Participants" subsection of the methods section, we see that the subjects reported "either 2 or more colds in the last 12 months or an average of 1 or more cold per year."  Additionally, "exclusion criteria were previous training or current practice of meditation, moderate exercise at least 2 times a week or vigorous exercise at least 1 time a week, and a score of less than 24 points on the Folstein Mini-Mental State Examination or more than 14 points on the 9-item Patient Health Questionnaire (PHQ-9) depression screen..."  It could be that these exclusion criteria will result in systematic differences between the study participants and the population at large that limit our ability to extend the results of the study to the population.
+
+#### 6. Was there any evidence of blinding?
+
+No blinding was used; the subjects and researchers knew what treatment each participant was assigned to.  I would note that the researchers describe that randomly generated codes used for assignment of subjects to treatments "were concealed in consecutively numbered sealed envelopes, which were opened after consent to indicate allocation."  This isn't exactly blinding, but the subjects did agree to participate in the study before they were told which treatment they would be doing.
+
+#### 7. What did the study conclude?
+
+Meditation reduced the severity and duration of accute respiratory illness in the subject particpants, and there was some indication that exercise may help as well.
+
+## Abstract 2
+
+After reading the abstract of "Association of Coffee Drinking with Total and Cause-Specific Mortality", answer the following questions:
+
+#### 1. Is this an observational study or an experiment?
+
+This is an observational study; the researchers did not assign the treatments to the subject participants.
+
+#### 2. Is the study prospective or retrospective?
+
+In class today I said this was a retrospective study, but after more checking on definitions and thinking, I think this could be argued either way.  The thinking that I laid out in class was that it's not clear the researchers had formulated their research question at the time the study began.  If they decided what their research question would be, then found data representing historical outcomes to use in analyzing this question, I think there's an argument that that's a retrospective study.
+
+On the other hand, our textbook and several online descriptions state that a prospective study is defined by whether the subjects in the data set are identified before the event of interrest (in this case, death) occurs.  According to that definition, I think you could reasonably argue that the study is prospective; the researchers performing data collection selected participants to follow, and then examined their medical status during follow-up years.
+
+I discussed this with another professor here, and she agreed that you could reasonably argue either way in this case.
+
+#### 3. What are the explanatory and response variables?
+
+The explanatory variable of primary interest is whether or not an individual drank coffee, and if so how many cups of coffee they drank.  The subjects also accounted for other variables which might affect risk of mortality, such as smoking.  The response variable was death.
+
+#### 4. How did the authors adjust for possible sources of confounding?
+
+They included many variables that are related to mortality in their models.  Essentially, this allowed them to compare mortality rates among people who had different coffee-drinking status, but were similar on other characteristics that affected their health.  The authors specifically mentioned that they controlled for tobacco use, which was associated with coffee drinking and risk of death.  This is similar to the use of matching.
+
+#### 5. What did the study conclude?
+
+The study found that overall, coffee drinkers had a higher risk of death, but coffee drinkers were also likely to engage in other behaviors such as tobacco smoking that were associated with higher mortality rates.  Among people with similar characteristics (e.g., among smokers and among non-smokers), coffee drinkers had lower mortality rates than non-coffee drinkers.

@@ -157,6 +157,7 @@ make_week_box("week4", TRUE, "Week 4: Sep 24 -- 28",
     * Summary of Experiments and Observational Studies: [pdf](materials/20180924_observational_experiments/20180924_experiments_observational_summary.pdf)
     * Examples
         * Worksheet: [pdf](materials/20180924_observational_experiments/20180924_experiments_observational.pdf)
+        * Solutions: [pdf](materials/20180924_observational_experiments/20180924_experiments_observational_solutions.pdf)
         * Study 1: [pdf](materials/20180924_observational_experiments/colds-and-meditation_Annals-Family-Medicine_12.pdf)
         * Study 2: [pdf](materials/20180924_observational_experiments/coffee-drinking-and-mortality_NEJM-12.pdf)
  * **After class**, please:
