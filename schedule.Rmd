@@ -105,7 +105,7 @@ make_week_box("week2", FALSE, "Week 2: Sep 10 -- 14",
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week3", TRUE, "Week 3: Sep 17 -- 21",
+make_week_box("week3", FALSE, "Week 3: Sep 17 -- 21",
 "
 
 #### Mon, Sep 17
@@ -154,7 +154,11 @@ make_week_box("week4", TRUE, "Week 4: Sep 24 -- 28",
  * **In class**, we will work on:
     * **Quiz** on material from HW03.  Solutions to HW03 are posted on Gryd and a sample quiz is posted on the [Quizzes/Exams](http://www.evanlray.com/stat140_f2018/exams.html) page on the course website.
     * Wrap up of Lab03 on Gryd, which we did on Friday Sep 21
-    * Material from Chapter 12 (4th edition); or Chapter 13 (3rd edition)
+    * Summary of Experiments and Observational Studies: [pdf](materials/20180924_observational_experiments/20180924_experiments_observational_summary.pdf)
+    * Examples
+        * Worksheet: [pdf](materials/20180924_observational_experiments/20180924_experiments_observational.pdf)
+        * Study 1: [pdf](materials/20180924_observational_experiments/colds-and-meditation_Annals-Family-Medicine_12.pdf)
+        * Study 2: [pdf](materials/20180924_observational_experiments/coffee-drinking-and-mortality_NEJM-12.pdf)
  * **After class**, please:
     * **Homework 4**: Assignment covering Chapters 3 -- 4 and 6, on Gryd, due Wednesday Sep 26 at midnight.
 
