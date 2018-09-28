@@ -20,3 +20,6 @@ title: "Homework"
 |    4         | Homework assignment on Gryd covering material | 9/26/2018 |  1    |
 |              | from Chapters 3, 4, and 6.                    |           |       |
 +--------------+-----------------------------------------------+-----------+-------+
+|    5         | Homework assignment on Gryd covering material | 10/3/2018 |  1    |
+|              | from Chapters 11 and 12.                      |           |       |
++--------------+-----------------------------------------------+-----------+-------+

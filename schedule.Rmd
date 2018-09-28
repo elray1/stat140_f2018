@@ -166,9 +166,18 @@ make_week_box("week4", TRUE, "Week 4: Sep 24 -- 28",
 #### Wed, Sep 26
  * **Homework 4 due at midnight!**
  * **In class**, we will work on:
-    * Introduction to hypothesis testing
+    * Introduction to hypothesis testing [pdf](materials/20180926_intro_testing/20180926_friend_or_foe.pdf)
+ * **After class**, please:
+    * **Homework 5** due Wednesday, Oct 3
+    * **Read**
+        * Stats: Data and Models 4th edition: Sections 16.1, 16.2, and 16.3.  Don't worry about the formulas, we will be using R for computations.
+        * Stats: Data and Models 3rd edition: Chapter 17 - just the first few sections, up to and including \"The Binomial Model\"; stop before \"The Normal Model to the Rescue!\"  Don't worry about the formulas, we will be using R for computations.
 
 #### Fri, Sep 28
+ * **In class**, we will work on:
+    * The binomial model and its use for hypothesis tests about a proportion.
+ * **After class**, please:
+    * **Homework 5** due Wednesday, Oct 3
 "
   )
 ```
