@@ -1,0 +1,94 @@
+---
+title: "Stat 140 - Quiz 1"
+output: pdf_document
+documentclass: extarticle
+classoption: 14pt
+geometry: margin=0.6in
+header-includes:
+   - \usepackage{booktabs}
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(eval = TRUE)
+library(dplyr)
+library(ggplot2)
+```
+
+## What's Your Name? ____________________
+
+The American Time Use Survey (ATUS) is an annual, nationally representative survey of residents of America.  A large number of characteristics of the study participants are recorded; here, we will examine just a few of these.  The first few rows of the reduced data set are displayed below:
+
+```{r, load_data, message = FALSE, echo = FALSE}
+library(atus)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(mosaic)
+
+atus <- atusresp %>% left_join(atuscps)
+
+atus$education <- "<coll degree"
+atus$education[atus$edu %in% c("associate degree", "bachelor's degree", "master's degree", "prof degree", "doctoral degree")] <- "coll degree"
+
+atus$employment <- "not in labor force"
+atus$employment[atus$labor_status %in% c("employed-absent", "employed-at work")] <- "employed"
+atus$employment[atus$labor_status %in% c("unemployed-looking", "unemployed-layoff")] <- "unemployed"
+
+atus <- atus %>%
+  mutate(tucaseid = substr(tucaseid, 10, 14),
+         education = factor(education, levels = c("<coll degree", "coll degree"), ordered = TRUE)) %>%
+  dplyr::select(
+    tucaseid, age, sex, state, employment, education, weekly_earn
+  )
+
+names(atus)[1] <- "id"
+```
+
+```{r, message=FALSE, echo = FALSE}
+head(atus)
+```
+
+### 1. What is each observational unit in this data set?
+
+\vspace{2cm}
+
+### 2. For each of the following variables, is that variable categorical or quantitative?  If it is categorical, is it ordinal or nominal?
+
+* `weekly_earn`
+\vspace{0.3cm}
+* `state`
+\vspace{0.3cm}
+* `education`
+
+\newpage
+
+### 3. The following table contains counts of how many observational units are in each combination of levels of the employment and education variables, as well as totals for each variable.  Use these values to answer the questions below.  *In all cases, you can leave your answer(s) as fraction(s); no need to find a decimal representation unless you find that helpful.*
+
+\begin{table}[!h]
+\begin{tabular}{r c c c}
+\toprule
+ & \multicolumn{2}{c}{Education Level} &  \\
+\cmidrule{2-3}
+Employment Status & Less Than College Degree & College Degree & Total \\
+\midrule
+Employed & 58296 & 54700 & 112996 \\
+Unemployed & 6618 & 2102 & 8720 \\
+\midrule
+Total & 64914 & 56802 & 121716 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+#### (a) Calculate the marginal distribution of the employment status variable.
+
+\vspace{2cm}
+
+#### (b) Calculate the conditional distribution of employment status given that the subject's education level is "Less than College Degree".
+
+\vspace{2cm}
+
+#### (c) Calculate the conditional distribution of employment status given that the subject's education level is "College Degree".
+
+\vspace{2cm}
+
+#### (d) Is an individual's employment status independent of their education level?  Justify your answer with specific discussion of one or more of your answers to parts (a), (b), and (c)
