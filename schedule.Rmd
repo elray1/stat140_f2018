@@ -175,7 +175,8 @@ make_week_box("week4", TRUE, "Week 4: Sep 24 -- 28",
 
 #### Fri, Sep 28
  * **In class**, we will work on:
-    * The binomial model and its use for hypothesis tests about a proportion.
+    * The binomial model and its use for hypothesis tests about a proportion. [pdf](materials/20180928_rvs_binomial/20180928_binomial.pdf)
+    * Lab 06 on Gryd
  * **After class**, please:
     * **Homework 5** due Wednesday, Oct 3
 "
@@ -183,10 +184,17 @@ make_week_box("week4", TRUE, "Week 4: Sep 24 -- 28",
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week5", FALSE, "Week 5: Oct 1 -- 5",
+make_week_box("week5", TRUE, "Week 5: Oct 1 -- 5",
 "
+More on inference for a population proportion.
 
 #### Mon, Oct 1
+ * **In class**, we will work on:
+    * Quiz on material from HW4 (see Quizzes/Exams page for review materials)
+    * Wrap up lab 06 on Gryd (more time if needed)
+    * More about hypothesis tests for a population proportion.
+ * **After class**, please:
+    * **Homework 5** due Wednesday, Oct 3
 
 #### Wed, Oct 3
 
