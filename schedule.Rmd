@@ -147,7 +147,7 @@ make_week_box("week3", FALSE, "Week 3: Sep 17 -- 21",
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week4", TRUE, "Week 4: Sep 24 -- 28",
+make_week_box("week4", FALSE, "Week 4: Sep 24 -- 28",
 "
 
 #### Mon, Sep 24
@@ -175,7 +175,9 @@ make_week_box("week4", TRUE, "Week 4: Sep 24 -- 28",
 
 #### Fri, Sep 28
  * **In class**, we will work on:
-    * The binomial model and its use for hypothesis tests about a proportion. [pdf](materials/20180928_rvs_binomial/20180928_binomial.pdf)
+    * The binomial model and its use for hypothesis tests about a proportion.
+        * UPDATED, CORRECT VERSION: [pdf](materials/20180928_rvs_binomial/20180928_binomial_corrected.pdf)
+        * ORIGINAL, INCORRECT VERSION: [pdf](materials/20180928_rvs_binomial/20180928_binomial.pdf)
     * Lab 06 on Gryd
  * **After class**, please:
     * **Homework 5** due Wednesday, Oct 3
@@ -191,14 +193,25 @@ More on inference for a population proportion.
 #### Mon, Oct 1
  * **In class**, we will work on:
     * Quiz on material from HW4 (see Quizzes/Exams page for review materials)
-    * Wrap up lab 06 on Gryd (more time if needed)
-    * More about hypothesis tests for a population proportion.
+    * Correction to discussion of `pbinom` from last class.
+    * Wrap up Lab 06 on Gryd
+    * More about hypothesis tests for a population proportion. [pdf](materials/20181001_proportion_h_test/20181001_proportion_h_test.pdf)
  * **After class**, please:
     * **Homework 5** due Wednesday, Oct 3
 
 #### Wed, Oct 3
+ * **Homework 5 due today!!**
+ * **In class**, we will work on:
+    * Introduction to confidence intervals for proportions
+    * Lab 07 on Gryd: thinking about hypothesis tests and confidence intervals
+ * **After class**, please:
+    * Start reviewing for our first midterm
 
 #### Fri, Oct 5
+ * **In class**, we will work on:
+    * Lab 08 on Gryd: More practice with hypothesis tests and confidence intervals
+ * **After class**, please:
+    * Review for our first midterm
 "
   )
 ```
