@@ -8,3 +8,5 @@ title: "Resources"
  * Other R Commands:
     * My summary: [pdf](resources/data_loading_wrangling/data_loading_wrangling.pdf)
     * Data wrangling cheat sheet (we will only use a small amount of the stuff discussed here): [pdf](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
+ * R Commands for Inference about Population Proportions:
+    * My summary: [pdf](resources/inference_proportions/inference_proportions.pdf)

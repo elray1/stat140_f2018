@@ -202,14 +202,14 @@ More on inference for a population proportion.
 #### Wed, Oct 3
  * **Homework 5 due today!!**
  * **In class**, we will work on:
-    * Introduction to confidence intervals for proportions
-    * Lab 07 on Gryd: thinking about hypothesis tests and confidence intervals
+    * Review of examples from last class
+    * Lab 07 on Gryd: more examples of hypothesis tests about proportions, computations in R
  * **After class**, please:
     * Start reviewing for our first midterm
 
 #### Fri, Oct 5
  * **In class**, we will work on:
-    * Lab 08 on Gryd: More practice with hypothesis tests and confidence intervals
+    * Start thinking about confidence intervals for a population proportion
  * **After class**, please:
     * Review for our first midterm
 "
