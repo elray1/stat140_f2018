@@ -195,7 +195,9 @@ More on inference for a population proportion.
     * Quiz on material from HW4 (see Quizzes/Exams page for review materials)
     * Correction to discussion of `pbinom` from last class.
     * Wrap up Lab 06 on Gryd
-    * More about hypothesis tests for a population proportion. [pdf](materials/20181001_proportion_h_test/20181001_proportion_h_test.pdf)
+    * More about hypothesis tests for a population proportion.
+        * Worksheet: [pdf](materials/20181001_proportion_h_test/20181001_proportion_h_test.pdf)
+        * Solutions: [pdf](materials/20181001_proportion_h_test/20181001_proportion_h_test_solutions.pdf)
  * **After class**, please:
     * **Homework 5** due Wednesday, Oct 3
 
@@ -203,7 +205,7 @@ More on inference for a population proportion.
  * **Homework 5 due today!!**
  * **In class**, we will work on:
     * Review of examples from last class
-    * Lab 07 on Gryd: more examples of hypothesis tests about proportions, computations in R
+    * Lab 07 on Gryd: more examples of hypothesis tests about proportions, practice doing computations in R
  * **After class**, please:
     * Start reviewing for our first midterm
 
