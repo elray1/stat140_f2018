@@ -1,0 +1,206 @@
+---
+title: "Hypothesis Tests about Proportions: Practice Examples"
+output:
+  pdf_document:
+    fig_height: 3
+    fig_width: 5
+documentclass: extarticle
+classoption: 14pt
+geometry: margin=0.6in
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, cache = FALSE)
+require(ggplot2)
+require(scales)
+require(dplyr)
+require(tidyr)
+require(readr)
+require(mosaic)
+```
+
+## Example 1: Adapted from SDM4 19.20
+
+In 2008, the Centers for Disease Control and Prevention reported that 34% of adults in the United States are obese.  A local county health service planning a new awareness campaign polls a random sample of 750 adults living there; they hired a professional agency who used careful methodology to obtain a random and representative sample of adult residents of the county.  In this sample, 228 people were found to be obese based on their answers to a health questionnaire.  Do these data provide evidence that the 34% figure describing all adults in the U.S. is not accurate for this county?
+
+#### Step 1: Identify population parameter and sample statistic.
+
+ * **Population parameter**:
+
+\vspace{1cm}
+
+ * **Sample statistic**:
+
+\vspace{1cm}
+
+#### Step 2: State hypotheses
+
+ * **Null Hypothesis** ($H_0$):
+
+\vspace{2cm}
+
+ * **Alternative Hypothesis** ($H_A$):
+
+\newpage
+
+#### Step 3: Find sampling distribution of sample statistic, assuming $H_0$ is true
+
+Check conditions for using a Binomial distribution:
+
+ * Were there any forms of bias in our sampling procedure?
+
+\vspace{1cm}
+
+ * Was a categorical variable recorded for each observational unit?
+
+\vspace{1cm}
+
+ * Is our sample statistic a count of how many observational units in our sample were in one of the categories?
+
+\vspace{1cm}
+
+ * Are different observational units in our sample independent?
+
+\vspace{1cm}
+
+State the sampling distribution, assuming $H_0$ is true:
+
+$X \sim \text{Binomial}(\rule{1cm}{0.15mm}, \rule{1cm}{0.15mm})$
+
+#### Step 4: Calculate the p-value for the test (space is available in Lab 08 on Gryd)
+
+#### Step 5: Draw a conclusion
+
+What is the strength of evidence against the null hypothesis provided by the data?
+
+\vspace{2cm}
+
+Make a decision using a significance level of $\alpha = 0.05$.
+
+\vspace{2cm}
+
+What does your decision mean in the context of this example?
+
+\vspace{2cm}
+
+What would your decision have been if you had instead used a significance level of $\alpha = 0.01$ (so that you required stronger evidence to reject the null hypothesis)?
+
+\vspace{2cm}
+
+## Example 2: Adapted from SDM4 19.39
+
+An airline's public relations department says that the airline rarely loses passengers' luggage.  It further claims that on those occasions when luggage is lost, 90% is recovered and delivered to its owner within 24 hours.  A consumer group suspects the true recovery rate may be lower than the airline's claims.  They surveyed a large number of air travelers and found that only 103 of 122 people who lost luggage on that airline were reunited with the missing items by the next day.  Does this cast doubt on the airline's claim?
+
+#### Step 1: Identify population parameter and sample statistic.
+
+ * **Population parameter**:
+
+\vspace{1cm}
+
+ * **Sample statistic**:
+
+\vspace{1cm}
+
+#### Step 2: State hypotheses
+
+ * **Null Hypothesis** ($H_0$):
+
+\vspace{2cm}
+
+ * **Alternative Hypothesis** ($H_A$):
+
+\newpage
+
+#### Step 3: Find sampling distribution of sample statistic, assuming $H_0$ is true
+
+Check conditions for using a Binomial distribution:
+
+ * Were there any forms of bias in our sampling procedure?
+
+\vspace{1cm}
+
+ * Was a categorical variable recorded for each observational unit?
+
+\vspace{1cm}
+
+ * Is our sample statistic a count of how many observational units in our sample were in one of the categories?
+
+\vspace{1cm}
+
+ * Are different observational units in our sample independent?
+
+\vspace{1cm}
+
+State the sampling distribution, assuming $H_0$ is true:
+
+$X \sim \text{Binomial}(\rule{1cm}{0.15mm}, \rule{1cm}{0.15mm})$
+
+#### Step 4: Calculate the p-value for the test (space is available in Lab 08 on Gryd).  Make sure you know how to do this using both `pbinom` and `binom.test`.
+
+#### Step 5: Draw a conclusion
+
+What is the strength of evidence against the null hypothesis provided by the data?
+
+\vspace{2cm}
+
+Make a decision using a significance level of $\alpha = 0.05$.
+
+\vspace{2cm}
+
+## Example 3: Adapted from SDM4 19.42
+
+The College Board reported that 57.9% of all students who took the 2013 AP Statistics exam earned scores of 3 or higher.  One teacher wondered if the performance of her school was better.  She believed that year's students to be typical of those who will take AP Stats at the school and was pleased when 34 of her 54 students achieved scores of 3 or better.  Can she claim that her school is better?
+
+#### Step 1: Identify population parameter and sample statistic.
+
+ * **Population parameter**:
+
+\vspace{1cm}
+
+ * **Sample statistic**:
+
+\vspace{1cm}
+
+#### Step 2: State hypotheses
+
+ * **Null Hypothesis** ($H_0$):
+
+\vspace{2cm}
+
+ * **Alternative Hypothesis** ($H_A$):
+
+\newpage
+
+#### Step 3: Find sampling distribution of sample statistic, assuming $H_0$ is true
+
+Check conditions for using a Binomial distribution:
+
+ * Were there any forms of bias in our sampling procedure?
+
+\vspace{1cm}
+
+ * Was a categorical variable recorded for each observational unit?
+
+\vspace{1cm}
+
+ * Is our sample statistic a count of how many observational units in our sample were in one of the categories?
+
+\vspace{1cm}
+
+ * Are different observational units in our sample independent?
+
+\vspace{1cm}
+
+State the sampling distribution, assuming $H_0$ is true:
+
+$X \sim \text{Binomial}(\rule{1cm}{0.15mm}, \rule{1cm}{0.15mm})$
+
+#### Step 4: Calculate the p-value for the test (space is available in Lab 08 on Gryd).  Make sure you know how to do this using both `pbinom` and `binom.test`.
+
+#### Step 5: Draw a conclusion
+
+What is the strength of evidence against the null hypothesis provided by the data?
+
+\vspace{2cm}
+
+Make a decision using a significance level of $\alpha = 0.05$.

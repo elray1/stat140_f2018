@@ -211,7 +211,8 @@ More on inference for a population proportion.
 
 #### Fri, Oct 5
  * **In class**, we will work on:
-    * Start thinking about confidence intervals for a population proportion
+    * More practice with hypothesis tests for population proportions
+        * Worksheet: [pdf](materials/20181005_proportion_h_test_practice/20181005_proportion_h_test_practice.pdf)
  * **After class**, please:
     * Review for our first midterm
 "
@@ -219,15 +220,21 @@ More on inference for a population proportion.
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week6", FALSE, "Week 6: Oct 8 -- 12",
+make_week_box("week6", TRUE, "Week 6: Oct 8 -- 12",
 "
 
 #### Mon, Oct 8
  * **No Class**: mid-semester break.  Safe travels!
 
 #### Wed, Oct 10
+ * **In class**, we will work on:
+    * Start thinking about confidence intervals for a population proportion
+ * **After class**, please:
+    * Do the take-home part of the midterm!
 
 #### Fri, Oct 12
+ * **Take-home portion of midterm due today at start of class!**
+ * **In-class portion of midterm held today!**
 "
   )
 ```
