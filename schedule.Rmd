@@ -213,6 +213,7 @@ More on inference for a population proportion.
  * **In class**, we will work on:
     * More practice with hypothesis tests for population proportions
         * Worksheet: [pdf](materials/20181005_proportion_h_test_practice/20181005_proportion_h_test_practice.pdf)
+    * How can we plot p-values calculated based on a binomial distribution? [pdf](materials/20181005_proportion_h_test_practice/plotting_binomial_pvalues.pdf)
  * **After class**, please:
     * Review for our first midterm
 "

@@ -1,0 +1,61 @@
+---
+title: "Plotting the p-value for a Binomial test"
+output:
+  pdf_document:
+    fig_height: 3
+    fig_width: 5
+documentclass: extarticle
+classoption: 14pt
+geometry: margin=0.6in
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, cache = FALSE)
+require(ggplot2)
+require(scales)
+require(dplyr)
+require(tidyr)
+require(readr)
+require(mosaic)
+```
+
+\vspace{-0.5cm}
+
+The other day we looked at this example:
+
+Suppose we take a sample of size $n = 40$ and our null hypothesis is $H_0: p = 0.2$
+
+If the null hypothesis is true and conditions check out, our sampling distribution is $X \sim \text{Binomial}(40, 0.2)$ 
+
+Suppose that the alternative hypothesis is
+
+$H_A: p > 0.2$
+
+Suppose that we observe $x = 14$.  The p-value is $P(X \geq 14) = P(X > 13)$.
+
+How can we plot this?
+
+```{r, echo = TRUE, fig.height=1.8, fig.width=8}
+x <- 14
+n <- 40
+p <- 0.2
+
+binom_dist_to_plot <- data.frame(
+    num_successes = seq(from = 0, to = n)
+  ) %>%
+  mutate(
+    pv = factor(c(rep(0, x), rep(1, n - x + 1))),
+    probability = dbinom(x = seq(from = 0, to = n), size = n, prob = p)
+  )
+
+ggplot(data = binom_dist_to_plot,
+    mapping = aes(x = num_successes, y = probability, fill = pv)) +
+  geom_col() +
+  geom_vline(xintercept = x) +
+  xlab("Number of Successes") +
+  scale_fill_manual("Included\nin p-value\ncalculation?",
+    labels = c("No", "Yes"), values = c("black", "red")) +
+  theme_gray(base_size = 14)
+```
+
+
