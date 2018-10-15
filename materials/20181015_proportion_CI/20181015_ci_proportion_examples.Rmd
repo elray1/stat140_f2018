@@ -1,0 +1,65 @@
+---
+title: "Confidence Intervals for Population Proportions -- More Examples"
+output: pdf_document
+documentclass: extarticle
+classoption: 14pt
+geometry: margin=0.6in
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, cache = FALSE)
+require(ggplot2)
+require(scales)
+require(dplyr)
+require(tidyr)
+require(readr)
+require(mosaic)
+```
+
+## Example 1: Teenage Drivers (Adapted from SDM4 Exercise 18.25)
+
+An insurance company wants to know what proportion of car accidents in the US involve teenage drivers.  The company checks police records on 582 accidents that occurred in the US, selected at random, and notes that teenagers were at the wheel in 91 of them.
+
+#### (a) What is the population parameter being studied?  Describe it in a sentence.
+
+\vspace{3cm}
+
+#### (b) What is the sample statistic?  Describe it in a sentence and calculate its value.
+
+\vspace{3cm}
+
+#### (c) What is the sampling distribution of the sample statistic?  Check any necessary conditions.
+
+\vspace{3cm}
+
+#### (d) Calculate a 90% confidence interval for the population parameter.  (You'll have to do this in Gryd.)
+
+#### (e) Interpret the interval you obtained in part (d) in the context of this example.
+
+\vspace{3cm}
+
+#### (f) Would a 95% confidence interval for $\widehat{p}$ be wider or narrower than the 90% interval you obtained in part (e)?
+
+\vspace{3cm}
+
+## Example 2: Rickets (Adapted from SDM4 Exercise 18.31)
+
+Vitamin D, whether ingested as a dietary supplement or produced naturally when sunlight falls on the skin, is essential for strong, healhty bones.  The bone disease rickets, caused by vitamin D deficiency, was largely eliminated in England during the 1950s, but now there is concern that a generation of children more likely to watch TV or play computer games than spend time outdoors is at increased risk.  A recent study of 2700 children randomly selectd from all parts of England found that 540 of them were deficient in vitamin D.
+
+#### (a) What is the population parameter being studied?  Describe it in a sentence.
+
+\vspace{3cm}
+
+#### (b) What is the sample statistic?  Describe it in a sentence and calculate its value.
+
+\vspace{3cm}
+
+#### (c) What is the sampling distribution of the sample statistic?  Check any necessary conditions.
+
+\vspace{4cm}
+
+#### (d) Calculate a 98% confidence interval for the population parameter.  (You'll have to do this in Gryd.)
+
+#### (e) Interpret the interval you obtained in part (d) in the context of this example.
+
+\vspace{3cm}

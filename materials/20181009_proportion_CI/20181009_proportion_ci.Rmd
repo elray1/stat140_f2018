@@ -1,0 +1,77 @@
+---
+title: "Confidence Intervals for Proportions"
+output: pdf_document
+documentclass: extarticle
+classoption: 14pt
+geometry: margin=0.6in
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+require(ggplot2)
+require(dplyr)
+require(tidyr)
+require(readr)
+```
+
+# Public Opinion about Ebola Response
+
+In New York City on October 23rd, 2014, a doctor who had recently been treating Ebola patients in Guinea went to the hospital with a slight fever and was subsequently diagnosed with Ebola. Soon thereafter, an NBC 4 New York/The Wall Street Journal/Marist Poll found that 82% of New Yorkers favored a "mandatory 21-day quarantine for anyone who has come in contact with an Ebola patient". (Poll ID NY141026 on maristpoll.marist.edu). This poll included responses of 1,042 New York adults between October 26th and 28th, 2014.  Out of these survey respondents, 854 responded that they favored the mandatory quarantine.  The description of the survey methodology indicates that the survey respondents were selected by randomly dialing both landline and cellular telephone numbers, and that the balance of individuals in the sample "reflect[s] the 2010 Census results for age, gender, income, race, and region."
+
+#### 1. What is the population being studied?
+
+\vspace{1cm}
+
+#### 2. What is the population parameter we are interested in?  What is the sample statistic?
+
+\vspace{1.5cm}
+
+#### 3. Are the conditions for inference about the population parameter satisfied?
+
+1. Bias
+
+\vspace{0.2cm}
+
+2. Categorical variable recorded?
+
+\vspace{0.2cm}
+
+3. Sample statistic a count of how many in sample had a certain characteristic?
+
+\vspace{0.2cm}
+
+4. Observational units in sample independent?
+
+\newpage
+
+**What can the data from this sample tell us about the population?**
+
+\includegraphics{pop-sample.png}
+
+## Types of inference:
+
+1. **Hypothesis Tests:** Do the data offer evidence that the the population parameter is different from a specified value?
+2. **Point Estimate:** Our best guess at the value of the population parameter.
+3. **Confidence Intervals:** Informally, a range of values for the population parameter that are consistent with the data in the sample.
+
+## Sampling Distribution Model
+
+Let $X$ = Number of people in our sample who are in favor of the mandatory quarantine.
+
+We want to estimate $p$, the proportion of the population who are in favor of the mandatory quarantine.
+
+#### 4. What can we use for the parameters of the sampling distribution?
+
+$X \sim \text{Binomial}(\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,, \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,)$
+
+\newpage
+
+#### 5. Find a point estimate for the proportion of the population who are in favor of the mandatory quarantine.
+
+\vspace{4cm}
+
+#### 6. Find and interpret a confidence interval for the proportion of the population who are in favor of the mandatory quarantine.
+
+```{r, echo=TRUE}
+binom.test(x = 854, n = 1042, alternative = "two.sided")
+```

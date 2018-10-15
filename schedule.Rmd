@@ -186,7 +186,7 @@ make_week_box("week4", FALSE, "Week 4: Sep 24 -- 28",
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week5", TRUE, "Week 5: Oct 1 -- 5",
+make_week_box("week5", FALSE, "Week 5: Oct 1 -- 5",
 "
 More on inference for a population proportion.
 
@@ -221,7 +221,7 @@ More on inference for a population proportion.
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week6", TRUE, "Week 6: Oct 8 -- 12",
+make_week_box("week6", FALSE, "Week 6: Oct 8 -- 12",
 "
 
 #### Mon, Oct 8
@@ -241,14 +241,26 @@ make_week_box("week6", TRUE, "Week 6: Oct 8 -- 12",
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week7", FALSE, "Week 7: Oct 15 -- 19",
+make_week_box("week7", TRUE, "Week 7: Oct 15 -- 19",
 "
 
 #### Mon, Oct 15
+ * **In class**, we will work on:
+    * More examples of finding and interpreting confidence intervals for a population proportion: [pdf](materials/20181015_proportion_CI/20181015_ci_proportion_examples.pdf)
+ * **After class**, please:
+    * **Read**:
+        * SDM4: Chapter 5, Sections 17.3, 17.4, and 17.5
+        * SDM3: Chapter 6, Second half of Chapter 18 (starting at \"What About Quantitative Data?\")
+    * **Homework 6 due Wed, Oct 24** (will be assigned on Gryd by Tuesday Oct 16)
 
 #### Wed, Oct 17
+ * **In class**, we will work on:
+    * The sampling distribution of the sample mean.
+ * **After class**, please:
+    * **Homework 6 due Wed, Oct 24** (will be assigned on Gryd by Tuesday Oct 16)
 
 #### Fri, Oct 19
+ * **Class cancelled for LEAP day**
 "
   )
 ```
@@ -257,6 +269,7 @@ make_week_box("week7", FALSE, "Week 7: Oct 15 -- 19",
 make_week_box("week8", FALSE, "Week 8: Oct 22 -- 26",
 "
 #### Mon, Oct 22
+ * Hypothesis tests about a sample mean.
 
 #### Wed, Oct 24
 
