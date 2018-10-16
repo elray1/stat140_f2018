@@ -257,7 +257,7 @@ make_week_box("week7", TRUE, "Week 7: Oct 15 -- 19",
  * **In class**, we will work on:
     * The sampling distribution of the sample mean.
  * **After class**, please:
-    * **Homework 6 due Wed, Oct 24** (will be assigned on Gryd by Tuesday Oct 16)
+    * **Homework 6 due Wed, Oct 24**
 
 #### Fri, Oct 19
  * **Class cancelled for LEAP day**
@@ -269,9 +269,13 @@ make_week_box("week7", TRUE, "Week 7: Oct 15 -- 19",
 make_week_box("week8", FALSE, "Week 8: Oct 22 -- 26",
 "
 #### Mon, Oct 22
- * Hypothesis tests about a sample mean.
+ * **In class**, we will work on:
+    * Hypothesis tests about a sample mean.
+ * **After class**, please:
+    * **Homework 6 due Wed, Oct 24**
 
 #### Wed, Oct 24
+ * **Homework 6 is due today!!**
 
 #### Fri, Oct 26
 "
