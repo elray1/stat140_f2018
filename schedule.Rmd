@@ -256,6 +256,7 @@ make_week_box("week7", TRUE, "Week 7: Oct 15 -- 19",
 #### Wed, Oct 17
  * **In class**, we will work on:
     * Overview of where we've been and where we're going.  [pdf](materials/20181017_sampling_dist_mean/20181017_sampling_dist_mean.pdf)
+    * Mid-semester course evaluation: [https://goo.gl/forms/qBrFGQA0ZkEy5jWm1](https://goo.gl/forms/qBrFGQA0ZkEy5jWm1)
     * The sampling distribution of the sample mean.  Lab 11 in Gryd.
  * **After class**, please:
     * Work on **Homework 6 due Wed, Oct 24**
