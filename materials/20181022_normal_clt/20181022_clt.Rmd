@@ -1,0 +1,221 @@
+---
+title: "Sampling Distribution of the Sample Mean"
+output: pdf_document
+documentclass: extarticle
+classoption: 14pt
+geometry: margin=0.6in
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+require(ggplot2)
+library(grid)
+require(dplyr)
+require(tidyr)
+require(readr)
+require(mosaic)
+```
+
+\vspace{-0.5cm}
+
+**Our Goal:** Estimate the mean of a quantitative variable, using data from a sample.
+
+**Sampling Distribution of the Sample Mean:** The distribution of values of the sample mean that we would obtain from all possible samples of a certain size $n$.
+
+**Last class:** Calculated the sample mean gestation time for many different samples from the population of all babies born in the US in December 1998:
+
+```{r, echo = FALSE, cache = TRUE, message = FALSE, warning=FALSE}
+babies <- read_csv("http://www.evanlray.com/data/misc/babies1998/babies_dec_1998.csv")
+babies <- babies %>%
+  filter(!is.na(gestation))
+population <- babies
+
+p1 <- ggplot(data = population, mapping = aes(x = gestation)) +
+  geom_histogram(binwidth = 1) +
+#  geom_density(adjust = 5) +
+#  geom_histogram(bins = 30) +
+  geom_vline(mapping = aes(xintercept = mean(population$gestation)), color = "red") +
+  xlim(c(10, 50)) +
+  ggtitle("Gestation Times in Population") +
+  theme_gray(base_size = 14)
+
+
+sample_means <- do(1000) * {
+    candy_sample <- population %>% sample_n(size = 10, replace = FALSE)
+    candy_sample %>%
+        summarize(sample_mean_gestation = mean(gestation))
+}
+
+p2 <- ggplot(data = sample_means, mapping = aes(x = sample_mean_gestation)) +
+  geom_density() +
+  geom_vline(mapping = aes(xintercept = mean(population$gestation)), color = "red") +
+  xlim(c(10, 50)) +
+  ggtitle("Simulated Sample Means, n = 10") +
+  theme_gray(base_size = 14)
+
+
+sample_means <- do(1000) * {
+    candy_sample <- population %>% sample_n(size = 20, replace = FALSE)
+    candy_sample %>%
+        summarize(sample_mean_gestation = mean(gestation))
+}
+
+
+p3 <- ggplot(data = sample_means, mapping = aes(x = sample_mean_gestation)) +
+  geom_density() +
+  geom_vline(mapping = aes(xintercept = mean(population$gestation)), color = "red") +
+  xlim(c(10, 50)) +
+#  ggtitle("Simulated Sample Means,\nSample Size = 20")
+  ggtitle("Simulated Sample Means, n = 20") +
+  theme_gray(base_size = 14)
+
+
+
+sample_means <- do(1000) * {
+    candy_sample <- population %>% sample_n(size = 30, replace = FALSE)
+    candy_sample %>%
+        summarize(sample_mean_gestation = mean(gestation))
+}
+
+p4 <- ggplot(data = sample_means, mapping = aes(x = sample_mean_gestation)) +
+  geom_density() +
+  geom_vline(mapping = aes(xintercept = mean(population$gestation)), color = "red") +
+  xlim(c(10, 50)) +
+  ggtitle("Simulated Sample Means, n = 30") +
+  theme_gray(base_size = 14)
+```
+```{r, echo = FALSE, message=FALSE, warning = FALSE, fig.height = 7.1, fig.width=8}
+grid.newpage()
+#pushViewport(viewport(layout = grid.layout(nrow = 2, ncol = 2)))
+#print(p1, vp = viewport(layout.pos.row = 1, layout.pos.col = 1))
+#print(p2, vp = viewport(layout.pos.row = 1, layout.pos.col = 2))
+#print(p3, vp = viewport(layout.pos.row = 2, layout.pos.col = 1))
+#print(p4, vp = viewport(layout.pos.row = 2, layout.pos.col = 2))
+#pushViewport(viewport(layout = grid.layout(nrow = 4, ncol = 1)))
+pushViewport(viewport(layout = grid.layout(nrow = 3, ncol = 1)))
+print(p1, vp = viewport(layout.pos.row = 1, layout.pos.col = 1))
+print(p2, vp = viewport(layout.pos.row = 2, layout.pos.col = 1))
+#print(p3, vp = viewport(layout.pos.row = 3, layout.pos.col = 1))
+print(p4, vp = viewport(layout.pos.row = 3, layout.pos.col = 1))
+```
+
+**Center:** On average, the sample mean is close to the population mean
+
+**Spread:** As $n$ increases, there is less spread in the sample means from different samples
+
+**Shape:** As $n$ increases, the distribution of sample means becomes more symmetric.
+ 
+\newpage
+
+#### Central Limit Theorem:
+
+Suppose that the mean of a variable in the population is $\mu$, and standard deviation is $\sigma$
+
+The sampling distribution of $\bar{Y}$ based on $n$ independent observations:
+
+ * has mean $\mu$ (on average, sample mean is equal to population mean)
+ * has standard deviation $\sigma/\sqrt{n}$ (more consistently near population mean for big $n$)
+ * is approximately normal, if $n$ is large enough
+
+Putting this together: If $n$ is large enough, $\bar{Y} \sim \text{Normal}(\mu, \sigma/\sqrt{n})$ (approximately).
+
+#### Conditions to Check:
+
+1. There are no forms of **bias** in the sampling procedure.
+2. We recorded a **quantitative** variable for each observational unit.
+3. The **mean** is a reasonable summary of the center, and the **sample size** is large enough that the Central Limit Theorem applies.
+4. The observational units in our sample are **independent** of each other.
+
+**Checking that using the mean is reasonable:**
+
+ * Previously: unimodal, symmetric, no outliers.
+ * These conditions work for large sample sizes, but not for small sample sizes.
+
+Here are density plots of 4 different samples of size 10 from a Normal(0, 1) distribution
+
+```{r, echo = FALSE, fig.height=3}
+set.seed(1)
+ngroups <- 4
+example_df <- data.frame(
+  x = rnorm(10 * ngroups),
+  sample = rep(letters[1:ngroups], times = 10)
+)
+```
+
+```{r, fig.height = 1.5}
+ggplot(data = example_df, mapping = aes(x = x, color = sample)) +
+  geom_density()
+```
+
+For all 4 of these samples, using the mean is justified by theory.  In practice, with small sample sizes the best we can do is to:
+
+ * calculate both the mean and the median and see if they are comparable (this will rule out serious outliers or serious skewness)
+ * think about the context of the data and whether we would expect there to be any outliers or serious skewness in the population.
+
+```{r, echo = FALSE, eval = FALSE}
+example_df %>%
+  group_by(sample) %>%
+  summarize(
+    median = median(x),
+    mean = mean(x)
+  )
+```
+
+**Checking that the sample size is large enough:**
+
+ * If the distribution looks good enough to calculate a mean, $n =  30$ is enough
+ * Smaller sample sizes are also OK if your distribution looks "good".
+
+### Example:
+
+Suppose that in the population of all babies, the mean of all gestation times is 38.8 weeks and the standard deviation is 2.6 weeks. (This matches what we had for the babies born in 1998.)
+
+#### (a) Suppose I plan to take a random sample of 100 babies and compute the sample mean gestation time, $\bar{Y}$ (of course I will avoid bias in my sampling).  What is the sampling distribution of the sample mean? Check all conditions.
+
+1. The sample is representative/there are no forms of **bias** in the sampling procedure.
+
+\vspace{0.5cm}
+
+2. We recorded a **quantitative** variable for each observational unit.
+
+\vspace{0.5cm}
+
+3. The **mean** is a reasonable summary of the center, and the **sample size** is large enough that the Central Limit Theorem applies.
+
+\vspace{0.5cm}
+
+4. The observational units in our sample are **independent** of each other.
+
+\vspace{2cm}
+
+#### (b) What is the probability that my sample mean will be more than 39.31 weeks?  (For what proportion of samples would the sample mean be more than 39.31 weeks?)
+
+\vspace{2cm}
+
+
+\newpage
+
+
+### Example:
+
+#### (a) Suppose I plan to take a random sample of 64 houses in South Hadley, MA, and compute the sample mean square footage of the houses.  According to town records, the mean square footage of all houses in the town is 1400 square feet, with a standard deviation of 100 square feet.  The records also indicate that there is some skewness in the distribution of house square footage in the population, but it is not too severe.  What is the sampling distribution of the sample mean? Check all conditions.
+
+1. The sample is representative/there are no forms of **bias** in the sampling procedure.
+
+\vspace{0.5cm}
+
+2. We recorded a **quantitative** variable for each observational unit.
+
+\vspace{0.5cm}
+
+3. The **mean** is a reasonable summary of the center, and the **sample size** is large enough that the Central Limit Theorem applies.
+
+\vspace{0.5cm}
+
+4. The observational units in our sample are **independent** of each other.
+
+\vspace{2cm}
+
+#### (b) What is the probability that my sample mean will be more than 1425 square feet?  (For what proportion of samples would the sample mean be more than 1425 square feet?)
+
+\vspace{2cm}

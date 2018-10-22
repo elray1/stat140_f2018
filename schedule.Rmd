@@ -241,7 +241,7 @@ make_week_box("week6", FALSE, "Week 6: Oct 8 -- 12",
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week7", TRUE, "Week 7: Oct 15 -- 19",
+make_week_box("week7", FALSE, "Week 7: Oct 15 -- 19",
 "
 
 #### Mon, Oct 15
@@ -268,18 +268,27 @@ make_week_box("week7", TRUE, "Week 7: Oct 15 -- 19",
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week8", FALSE, "Week 8: Oct 22 -- 26",
+make_week_box("week8", TRUE, "Week 8: Oct 22 -- 26",
 "
 #### Mon, Oct 22
  * **In class**, we will work on:
-    * Hypothesis tests about a sample mean.
+    * Overview of Lab 11 from Gryd (introduction to sampling distribution of the sample mean)
+    * The normal distribution: [pdf](materials/20181022_normal_clt/20181022_normal_clt.pdf)
+    * Sampling distribution of the sample mean: [pdf](materials/20181022_normal_clt/20181022_clt.pdf)
  * **After class**, please:
     * **Homework 6 due Wed, Oct 24**
+    * **Read**:
+        * SDM4: Chapter 20
+        * SDM3: Chapter 21
 
 #### Wed, Oct 24
  * **Homework 6 is due today!!**
+ * **In class**, we will work on:
+    * Hypothesis tests about a population mean
 
 #### Fri, Oct 26
+ * **In class**, we will work on:
+    * Either more examples of hypothesis tests about a population mean, or start on confidence intervals for a population mean
 "
   )
 ```
