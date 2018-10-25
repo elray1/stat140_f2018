@@ -284,24 +284,38 @@ make_week_box("week8", TRUE, "Week 8: Oct 22 -- 26",
 #### Wed, Oct 24
  * **Homework 6 is due today!!**
  * **In class**, we will work on:
+    * Finish examples about sampling distribution of the sample mean from last class
     * Hypothesis tests about a population mean
+        * Normal-distribution based hypothesis tests (necessary for conceptual understanding, but **not the actual method we will be using**!!).  [pdf](materials/20181024_htest_mean/20181024_normal_htest_mean.pdf)
 
 #### Fri, Oct 26
  * **In class**, we will work on:
-    * Either more examples of hypothesis tests about a population mean, or start on confidence intervals for a population mean
+    * Wrap up last example of normal-distribution hypothesis tests from last class.
+    * $t$-distribution based hypothesis tests (**this is the actual method we will be using**!!). [pdf](materials/20181026_t_test_mean/20181026_t_htest_mean.pdf)
+    * Start Lab 13 on Gryd: more examples
 "
   )
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week9", FALSE, "Week 9: Oct 29 -- Nov 2",
+make_week_box("week9", TRUE, "Week 9: Oct 29 -- Nov 2",
 "
-
 #### Mon, Oct 29
+ * **In class**, we will work on:
+    * **Quiz** on inference for a population proportion
+    * Finish Lab 13 on Gryd
 
 #### Wed, Oct 31
+ * **In class**, we will work on:
+    * Confidence intervals for a population mean
+ * **After class**, please:
+    * Start **HW7, due Wed. Nov 7**
 
 #### Fri, Nov 2
+ * **In class**, we will work on:
+    * Additional ideas about hypothesis tests and confidence intervals
+ * **After class**, please:
+    * Work on **HW7, due Wed. Nov 7**
 "
   )
 ```
@@ -311,10 +325,23 @@ make_week_box("week10", FALSE, "Week 10: Nov 5 -- 9",
 "
 
 #### Mon, Nov 5
+ * **In class**, we will work on:
+    * Additional ideas about hypothesis tests and confidence intervals
+ * **After class**, please:
+    * Work on **HW7, due Wed. Nov 7**
 
 #### Wed, Nov 7
+ * **Homework 7 due today!**
+ * **In class**, we will work on:
+    * Start on Linear Regression?  Or finish additional ideas about hypothesis tests and confidence intervals.
+ * **After class**, please:
+    * Work on **HW8, due Mon. Nov 12** (it's short)
 
 #### Fri, Nov 9
+ * **In class**, we will work on:
+    * Linear Regression
+ * **After class**, please:
+    * Work on **HW8, due Mon. Nov 12** (it's short)
 "
   )
 ```
@@ -324,10 +351,19 @@ make_week_box("week11", FALSE, "Week 11: Nov 12 -- 16",
 "
 
 #### Mon, Nov 12
+ * **Homework 8 due today!**
+ * **In class**, we will work on:
+    * Linear Regression
+ * **After class**, please:
+    * Review for Midterm 2
 
 #### Wed, Nov 14
+ * **Review for Midterm 2**
+ * **After class**, please:
+    * Review for Midterm 2
 
 #### Fri, Nov 16
+ * **Midterm 2 in class today**: covers inference for a population mean and population proportion; Homeworks 6, 7, and 8
 "
   )
 ```
@@ -337,6 +373,8 @@ make_week_box("week12", FALSE, "Week 12: Nov 19 -- 23 (Thanksgiving)",
 "
 
 #### Mon, Nov 19
+ * **In class**, we will work on:
+    * Linear Regression
 
 #### Wed, Nov 21
 * **No Class**: Thanksgiving break.  Safe travels!

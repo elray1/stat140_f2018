@@ -1,0 +1,234 @@
+---
+title: "$t$ Tests about a Population Mean"
+output: pdf_document
+documentclass: extarticle
+classoption: 14pt
+geometry: margin=0.6in
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+require(ggplot2)
+library(grid)
+require(dplyr)
+require(tidyr)
+require(readr)
+require(mosaic)
+options(pillar.sigfig = 8)
+```
+
+### Previously:
+
+$\mu$ is the mean of a variable, across all observational units in the population.
+
+Our hypotheses are of the form:
+
+$H_0$: $\mu = \mu_0$
+
+$H_A$: $\mu \neq \mu_0$ (or $\mu < \mu_0$, or $\mu > \mu_0$)
+
+Two options for how we can think about the sample statistic and what its sampling distribution would be if the null hypothesis was true (relevant for calculating p-values):
+
+1. $\bar{Y} \sim \text{Normal}(\mu_0, \sigma / \sqrt{n})$
+2. $z = \frac{\bar{Y} - \mu_0}{\sigma / \sqrt{n}} \sim \text{Normal}(0, 1)$
+
+Note:
+
+ * $\sigma$ is the standard deviation of values in the population
+ * $\sigma/\sqrt{n}$ is the standard deviation of values you could get for the sample mean based on a sample of size $n$.
+
+### Problem:
+
+We usually don't know the population standard deviation $\sigma$
+
+ * We can't calculate the standard deviation of the sampling distribution for $\bar{Y}$, $\sigma/ \sqrt{n}$
+ * We can't calculate $z = \frac{\bar{y} - \mu_0}{\sigma / \sqrt{n}}$
+
+### Solution:
+
+Estimate the population standard deviation with the sample standard deviation.
+
+**New test statistic (final answer):**
+
+$$t = \frac{\bar{y} - \mu_0}{s / \sqrt{n}}$$,
+
+where $s = \sqrt{\frac{\sum_{i = 1}^n (y_i - \bar{y})^2}{n - 1}}$ is the standard deviation of the data in the sample.
+
+**Definition:**
+
+ * A **standard error** is an estimate of the standard deviation of something.
+    * The **true** standard deviation of $\bar{Y}$ is $\sigma / \sqrt{n}$, but we don't know $\sigma$
+    * The **estimated** standard deviation (i.e., standard error) of $\bar{Y}$ is $s / \sqrt{n}$
+
+**Interpretation of $t$ Statistic:**
+
+$$t = \frac{\bar{y} - \mu_0}{s / \sqrt{n}}$$
+
+ * How many standard errors away from the hypothesized population mean $\mu_0$ is our sample mean $\bar{y}$?
+
+ * A larger difference between $\mu_0$ and $\bar{y}$ casts more doubt on the null hypothesis.
+ * But distance between $\mu_0$ and $\bar{y}$ is measured in units of (estimated) standard deviations of $\bar{y}$.
+
+### Facts:
+
+* $t \sim t_{n-1}$
+* Read as "$t$ follows a $t$ distribution with $n - 1$ degrees of freedom"
+* The degrees of freedom of $n - 1$ matches the denominator of $n-1$ in the sample standard deviation
+* The $t$ distribution is similar to the Normal$(0, 1)$, but $t$ has more probability in the tails (estimating $\sigma$ with $s$ introduces more variability)
+* As $n$ increases, the $t$ becomes more like a Normal$(0, 1)$
+
+```{r, echo = FALSE, fig.height=3.5}
+x_grid <- seq(from = -5, to = 5, by = 0.01)
+n_grid <- length(x_grid)
+
+mu1 <- 0
+sigma1 <- 1
+
+df <- c(2, 5, 20)
+
+plot_df <- data.frame(
+  x = rep(x_grid, 1 + length(df)),
+  density = c(
+    dnorm(x_grid, mean = mu1, sd = sigma1),
+    dt(x_grid, df = df[1]),
+    dt(x_grid, df = df[2]),
+    dt(x_grid, df = df[3])
+  ),
+  model = c(
+    rep("Normal", n_grid),
+    rep(paste0("df_", df), each = n_grid)
+  )
+)
+
+ggplot() +
+  geom_line(aes(x = x, y = density, color = model), size = 0.8, data = plot_df) +
+  scale_color_manual("Model",
+    breaks = c("Normal", paste0("df_", df)),
+    labels = c("Normal(0, 1)",
+      expression(paste(t[2], "; n = 3        ")),
+      expression(paste(t[5], "; n = 6        ")),
+      expression(paste(t[20], "; n = 21    "))),
+    values = c("blue", "red", "orange", "black")) +
+  theme_gray(base_size = 14)
+```
+
+\newpage
+
+### Example 1: Friday the 13th
+
+The *British Medical Journal* published an article titled "Is Friday the 13th Bad for Your Health?" The article examined the number of people admitted to emergency rooms for vehicular accidents on 12 Friday evenings (6 each on the 6th and 13th of a given month). The following R code reads the data in:
+
+```{r}
+fridays <- read_csv("http://www.evanlray.com/data/sdm4/Friday_the_13th_Part_2.csv")
+colnames(fridays) <- c("year_month", "accidents_6th", "accidents_13th")
+fridays
+dim(fridays)
+```
+
+Let's treat these as **paired data**: there may be some connection between the number of accidents on Friday the 13th in a particular month and the number of accidents that occurred one week earlier (for example, maybe it was a winter month with bad weather).  We will therefore consider the differences in the number of observed accidents between the 13th and the 6th of a given month:
+
+```{r}
+fridays <- fridays %>%
+    mutate(
+        accidents_difference = accidents_13th - accidents_6th
+    )
+
+fridays
+```
+
+\newpage
+
+#### Step 1: Identify population parameter of interest
+
+\vspace{2cm}
+
+#### Step 2: State hypotheses
+
+ * **Null Hypothesis** ($H_0$): 
+
+\vspace{2cm}
+
+ * **Alternative Hypothesis** ($H_A$): 
+
+\vspace{2cm}
+
+#### Step 3: Identify the sample statistic and the sampling distribution of the sample statistic, assuming $H_0$ is true.  Check all necessary conditions.
+
+**Check conditions:**
+
+ * Were there any forms of bias in our sampling procedure?
+
+\vspace{2cm}
+
+ * Was a quantitative variable recorded for each observational unit?
+
+\vspace{2cm}
+
+ * Is the mean a reasonable summary of the center, and is the sample size large enough that the Central Limit Theorem applies?  (See output on next page.)
+
+\newpage
+
+```{r, echo = TRUE, fig.height = 2.5}
+ggplot(data = fridays, mapping = aes(x = accidents_difference)) +
+    geom_density()
+```
+
+```{r, echo = TRUE, fig.height = 2.5}
+ggplot(data = fridays, mapping = aes(x = accidents_difference)) +
+    geom_histogram()
+```
+
+```{r, echo = TRUE}
+fridays %>%
+  summarize(
+    mean = mean(accidents_difference),
+    median = median(accidents_difference)
+  )
+```
+
+\vspace{2cm}
+
+ * Are different observational units in our sample independent?
+
+\vspace{2cm}
+
+**State the test statistic and its sampling distribution, assuming $H_0$ is true:**
+
+\vspace{2cm}
+
+#### Step 4: Calculate the p-value for the test
+
+```{r, echo = TRUE}
+fridays %>%
+    summarize(
+        mean_diff = mean(accidents_difference),
+        sd_diff = sd(accidents_difference)
+    )
+```
+
+\vspace{4cm}
+
+```{r, echo = TRUE}
+(3.333333 - 0)/(3.011091 / sqrt(6))
+pt(2.71163, df = 5, lower.tail = FALSE)
+```
+
+...or...
+
+```{r, echo = TRUE}
+pt(-2.71163, df = 5)
+```
+
+...or...
+
+```{r, echo = TRUE}
+t.test(~ accidents_difference, data = fridays, alternative = "greater")
+```
+
+#### Step 5: Draw a conclusion
+
+What is the strength of evidence against the null hypothesis provided by the data?
+
+\vspace{2cm}
+
+Make a decision using a significance level of $\alpha = 0.05$.
