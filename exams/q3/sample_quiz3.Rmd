@@ -1,0 +1,67 @@
+---
+title: "Stat 140 - Quiz 3"
+output: pdf_document
+documentclass: extarticle
+classoption: 14pt
+geometry: margin=0.6in
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(eval = TRUE)
+library(dplyr)
+library(ggplot2)
+```
+
+## What's Your Name? __________________________________
+
+This is a sample quiz.  On the real quiz, I will pick a different example of inference for a population proportion and ask questions similar to those below.
+
+## Garden Seeds
+
+A garden center wants to store leftover packets of vegetable seeds for sale the following spring, but the center is concerned that the seeds may not germinate at the same rate a year later.
+
+The manager randomly selects 200 seeds from a variety of packets from different companies and different batches of seeds, and plants them.  She carefully prepares similar soil for the seeds in a greenhouse, and randomizes where the seeds are planted within the greenhouse.  She finds that 171 of the 200 test seeds grew.  The seed packets all claimed that 95% of the seeds would grow.
+
+In answering the questions below, use the following output from R:
+
+```{r}
+binom.test(x = 171, n = 200, p = 0.95, alternative = "less")
+```
+
+\newpage
+
+```{r}
+binom.test(x = 171, n = 200, p = 0.95, alternative = "greater")
+```
+
+```{r}
+binom.test(x = 171, n = 200, p = 0.95, alternative = "two.sided")
+```
+
+\newpage
+
+#### 1) Describe the population parameter in a sentence.  What symbol would you use for the population parameter?
+
+\vspace{3cm}
+
+#### 2) Describe the sample statistic in a sentence.  What symbol would you use for the sample statistic?  What is the value of the sample statistic in this data set?
+
+\vspace{3cm}
+
+#### 3) What are the null and alternative hypotheses for a test of the claim that after a year of storage, the seeds germinate at a lower rate than the package label indicates?
+
+\vspace{3cm}
+
+#### 4) What would you use for the sampling distribution of the sample statistic, if the null hypothesis for the test were true?  Check all relevant conditions for using this sampling distribution.
+
+\vspace{5cm}
+
+Regardless of your answer about checking the conditions, let's go ahead with inference, for the sake of this quiz.
+
+#### 5) Draw a conclusion for the hypothesis test at the $\alpha = 0.05$ significance level.  Explain what your answer means about germination rates of seeds after they've been stored for a year.
+
+\vspace{2cm}
+
+#### 6) State a 95% confidence interval in the context of this problem.  As part of your answer, explain what the phrase "95% confident" means.
+
+\vspace{3cm}

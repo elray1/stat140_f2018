@@ -33,3 +33,6 @@ Review materials for quizzes and exams will be posted here.
 |         | You may bring 1 double-sided 8.5 by 11 inch sheet of paper  |               |
 |         | with notes on it to the in-class portion.                   |               |
 +---------+-------------------------------------------------------------+---------------+
+| Quiz    | Sample Quiz: [pdf](exams/q3/sample_quiz3.pdf)               | 2018-10-29    |
+|         | Sample Solutions: [pdf](exams/q3/sample_quiz3_sol.pdf)      |               |
++---------+-------------------------------------------------------------+---------------+

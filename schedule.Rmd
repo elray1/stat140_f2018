@@ -302,7 +302,7 @@ make_week_box("week9", TRUE, "Week 9: Oct 29 -- Nov 2",
 "
 #### Mon, Oct 29
  * **In class**, we will work on:
-    * **Quiz** on inference for a population proportion
+    * **Quiz** on inference for a population proportion.  See quizzes page for a sample quiz.
     * Finish Lab 13 on Gryd
 
 #### Wed, Oct 31
