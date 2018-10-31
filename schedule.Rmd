@@ -268,7 +268,7 @@ make_week_box("week7", FALSE, "Week 7: Oct 15 -- 19",
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week8", TRUE, "Week 8: Oct 22 -- 26",
+make_week_box("week8", FALSE, "Week 8: Oct 22 -- 26",
 "
 #### Mon, Oct 22
  * **In class**, we will work on:
@@ -279,7 +279,7 @@ make_week_box("week8", TRUE, "Week 8: Oct 22 -- 26",
     * **Homework 6 due Wed, Oct 24**
     * **Read**:
         * SDM4: Chapter 20
-        * SDM3: Chapter 21
+        * SDM3: Chapter 23
 
 #### Wed, Oct 24
  * **Homework 6 is due today!!**
@@ -303,12 +303,17 @@ make_week_box("week9", TRUE, "Week 9: Oct 29 -- Nov 2",
 #### Mon, Oct 29
  * **In class**, we will work on:
     * **Quiz** on inference for a population proportion.  See quizzes page for a sample quiz.
-    * Finish Lab 13 on Gryd
+    * Lab 13 on Gryd
 
 #### Wed, Oct 31
  * **In class**, we will work on:
-    * Confidence intervals for a population mean
+    * Review of second example from Lab 13
+    * Introduce confidence intervals for a population mean: [pdf](materials/20181031_t_ci_mean/20181031_t_ci.pdf)
+    * Lab 14 on Gryd
  * **After class**, please:
+    * Read:
+        * SDM4: Chapter 21
+        * SDM3: Chapter 21 (the material we've been working on for the last few days was in Chapter 23 - I had previously pointed you to Chapter 21 for this.)
     * Start **HW7, due Wed. Nov 7**
 
 #### Fri, Nov 2
