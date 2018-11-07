@@ -26,3 +26,8 @@ title: "Homework"
 |    6         | Homework assignment on Gryd covering          | 10/24/2018|  1    |
 |              | inference for a population proportion.        |           |       |
 +--------------+-----------------------------------------------+-----------+-------+
+|    7         | Homework assignment on Gryd covering          | 11/12/2018|  1    |
+|              | inference for a population mean, Type I and   |           |       |
+|              | Type II errors, and the relationship between  |           |       |
+|              | confidence intervals and hypothesis tests.    |           |       |
++--------------+-----------------------------------------------+-----------+-------+

@@ -298,7 +298,7 @@ make_week_box("week8", FALSE, "Week 8: Oct 22 -- 26",
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week9", TRUE, "Week 9: Oct 29 -- Nov 2",
+make_week_box("week9", FALSE, "Week 9: Oct 29 -- Nov 2",
 "
 #### Mon, Oct 29
  * **In class**, we will work on:
@@ -318,7 +318,7 @@ make_week_box("week9", TRUE, "Week 9: Oct 29 -- Nov 2",
 
 #### Fri, Nov 2
  * **In class**, we will work on:
-    * Additional ideas about hypothesis tests and confidence intervals
+    * Review Lab 14; Start Lab 15
  * **After class**, please:
     * Work on **HW7, due Wed. Nov 7**
 "
@@ -326,44 +326,45 @@ make_week_box("week9", TRUE, "Week 9: Oct 29 -- Nov 2",
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week10", FALSE, "Week 10: Nov 5 -- 9",
+make_week_box("week10", TRUE, "Week 10: Nov 5 -- 9",
 "
 
 #### Mon, Nov 5
  * **In class**, we will work on:
-    * Additional ideas about hypothesis tests and confidence intervals
- * **After class**, please:
-    * Work on **HW7, due Wed. Nov 7**
+    * More time for Lab 15
 
 #### Wed, Nov 7
- * **Homework 7 due today!**
  * **In class**, we will work on:
-    * Start on Linear Regression?  Or finish additional ideas about hypothesis tests and confidence intervals.
+    * Additional ideas about hypothesis tests and confidence intervals: [pdf](materials/20181107_errors_ci_tests/20181107_errors.pdf)
  * **After class**, please:
-    * Work on **HW8, due Mon. Nov 12** (it's short)
+    * Work on **HW7, due Mon. Nov 12**
+    * Read:
+        * SDM4 Chapter 7
+        * SDM3 Chapter 8
 
 #### Fri, Nov 9
  * **In class**, we will work on:
-    * Linear Regression
+    * More about hypothesis tests and confidence intervals?  Start on Linear Regression?
  * **After class**, please:
-    * Work on **HW8, due Mon. Nov 12** (it's short)
+    * Work on **HW7, due Mon. Nov 12**
 "
   )
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week11", FALSE, "Week 11: Nov 12 -- 16",
+make_week_box("week11", TRUE, "Week 11: Nov 12 -- 16",
 "
 
 #### Mon, Nov 12
- * **Homework 8 due today!**
+ * **Homework 7 due today!**
  * **In class**, we will work on:
     * Linear Regression
  * **After class**, please:
     * Review for Midterm 2
 
 #### Wed, Nov 14
- * **Review for Midterm 2**
+ * **In class**, we will work on:
+    * Linear regression, or review for midterm?
  * **After class**, please:
     * Review for Midterm 2
 
