@@ -344,7 +344,8 @@ make_week_box("week10", TRUE, "Week 10: Nov 5 -- 9",
 
 #### Fri, Nov 9
  * **In class**, we will work on:
-    * More about hypothesis tests and confidence intervals?  Start on Linear Regression?
+    * Start on Linear Regression: [pdf](materials/20181109_regression/20181109_regression.pdf)
+    * Lab 16
  * **After class**, please:
     * Work on **HW7, due Mon. Nov 12**
 "
