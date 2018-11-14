@@ -359,18 +359,24 @@ make_week_box("week11", TRUE, "Week 11: Nov 12 -- 16",
 #### Mon, Nov 12
  * **Homework 7 due today!**
  * **In class**, we will work on:
-    * Linear Regression
+    * Wrap up for lab 17 on Gryd: [pdf](materials/20181112_residuals/20181112_regression_lab_wrapup.pdf)
+    * Motivation for ideas thinking about model fit: [pdf](materials/20181112_residuals/20181112_model_fit_motivation.pdf)
+    * $R^2$ and Residual Standard Error (RSE): [pdf](materials/20181112_residuals/20181112_residual_standard_error_R_squared.pdf)
+    * Lab 17 on Gryd: Anscombe's data
+    * Linear Regression: conditions for inference and residual diagnostics: [pdf](materials/20181112_residuals/20181112_anscombe_residuals.pdf)
  * **After class**, please:
     * Review for Midterm 2
 
 #### Wed, Nov 14
  * **In class**, we will work on:
-    * Linear regression, or review for midterm?
+    * Finish handout about conditions for inference and residual diagnostics from last class
+    * Lab 18 on Gryd
  * **After class**, please:
     * Review for Midterm 2
 
 #### Fri, Nov 16
- * **Midterm 2 in class today**: covers inference for a population mean and population proportion; Homeworks 6, 7, and 8
+ * **In class**, we will work on:
+    * I will answer any questions you have about the exam.  I will not specifically prepare any material.  **Please come with questions or examples you would like to look at.**  It would be good to take a look at the practice exam posted on the quizzes/exams page on the course website.
 "
   )
 ```
@@ -380,8 +386,7 @@ make_week_box("week12", FALSE, "Week 12: Nov 19 -- 23 (Thanksgiving)",
 "
 
 #### Mon, Nov 19
- * **In class**, we will work on:
-    * Linear Regression
+ * **Midterm 2 in class today**: covers inference for a population mean and population proportion; Homeworks 6 and 7
 
 #### Wed, Nov 21
 * **No Class**: Thanksgiving break.  Safe travels!

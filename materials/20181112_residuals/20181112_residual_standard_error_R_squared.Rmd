@@ -1,0 +1,155 @@
+---
+title: "Residual Standard Error and $R^2$"
+output: pdf_document
+documentclass: extarticle
+classoption: 14pt
+geometry: margin=0.6in
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Summary
+
+ * We want to measure how useful a linear model is for predicting the response variable.
+ * The residual standard error is the standard deviation of the residuals
+    * Smaller residual standard error means predictions are better
+ * The $R^2$ is the square of the correlation coefficient $r$
+    * Larger $R^2$ means the model is better
+    * Can also be interpreted as "proportion of variation in the response variable accounted for by the linear model" - see later statistics classes or the book for why.
+
+## Example data set
+
+We have a data set with observations of four variables measuring advertising budgets and sales for a product in each of 200 markets:
+
+ * `sales` is a measure of sales volume in thousands of units
+ * `TV` is TV advertising budget in thousands of dollars
+ * `radio` is radio advertising budget in thousands of dollars
+ * `newspaper` is newspaper advertising budget in thousands of dollars
+
+Below are plots displaying three separate simple linear regression fits to the data.  In all three plots/models, `sales` is the response variable; the explanatory variable is different for each model.
+
+```{r, fig.height = 3, warning=FALSE, message=FALSE, echo = FALSE}
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(gridExtra) # for grid.arrange, puts plots next to each other
+
+Advertising <- read_csv("http://www.evanlray.com/data/islr/Advertising.csv")
+
+p1 <- ggplot(data = Advertising, mapping = aes(x = TV, y = sales)) + 
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_bw(base_size = 14)
+
+p2 <- ggplot(data = Advertising, mapping = aes(x = radio, y = sales)) + 
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_bw(base_size = 14)
+
+p3 <- ggplot(data = Advertising, mapping = aes(x = newspaper, y = sales)) + 
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_bw(base_size = 14)
+
+grid.arrange(p1, p2, p3, nrow = 1)
+```
+
+## Residual Standard Error
+
+ * Residuals: $e_i = y_i - \hat{y}_i$ (vertical distance between point and line)
+ * Smaller residuals mean the predictions were better.
+ * Measure "size" of residuals with the standard deviation.  For reasons discussed later, call this the residual standard error.
+
+```{r, fig.height = 3, warning=FALSE, message=FALSE, echo = FALSE}
+library(readr)
+library(ggplot2)
+library(gridExtra) # for grid.arrange, puts plots next to each other
+
+Advertising <- read_csv("http://www.evanlray.com/data/islr/Advertising.csv")
+
+p1 <- ggplot(data = Advertising, mapping = aes(x = TV, y = sales)) + 
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_bw(base_size = 14)
+
+fit <- lm(sales ~ TV, data = Advertising)
+Advertising <- Advertising %>%
+  mutate(
+    residual = residuals(fit)
+  )
+p4 <- ggplot(data = Advertising, mapping = aes(x = residual)) + geom_density() + xlim(c(-15, 15)) +
+  theme_bw(base_size = 14)
+
+p2 <- ggplot(data = Advertising, mapping = aes(x = radio, y = sales)) + 
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_bw(base_size = 14)
+
+fit <- lm(sales ~ radio, data = Advertising)
+Advertising <- Advertising %>%
+  mutate(
+    residual = residuals(fit)
+  )
+p5 <- ggplot(data = Advertising, mapping = aes(x = residual)) + geom_density() + xlim(c(-15, 15)) +
+  theme_bw(base_size = 14)
+
+p3 <- ggplot(data = Advertising, mapping = aes(x = newspaper, y = sales)) + 
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_bw(base_size = 14)
+
+fit <- lm(sales ~ newspaper, data = Advertising)
+Advertising <- Advertising %>%
+  mutate(
+    residual = residuals(fit)
+  )
+p6 <- ggplot(data = Advertising, mapping = aes(x = residual)) + geom_density() + xlim(c(-15, 15)) +
+  theme_bw(base_size = 14)
+
+grid.arrange(p1, p2, p3, p4, p5, p6, nrow = 2)
+```
+
+Residual standard errors:
+
+ * For regression on TV: 3.26
+ * For regression on radio: 4.28
+ * For regression on newspaper: 5.09
+
+Recall that:
+
+ * If a variable follows an approximately normal distribution, about 95% of observations are within 2 standard deviations of the mean.
+ * The mean of the residuals is 0.
+
+### 1. What is the interpretation of the residual standard deviation for the regression using TV as the explanatory variable, based on the "2 standard deviations rule"?
+
+\newpage
+
+### 2. What is the interpretation of the residual standard deviation for the regression using radio as the explanatory variable, based on the "2 standard deviations rule"?
+
+\vspace{4cm}
+
+### 3. What is the interpretation of the residual standard deviation for the regression using newspaper as the explanatory variable, based on the "2 standard deviations rule"?
+
+\vspace{4cm}
+
+## $R^2$
+
+Square of the correlation coefficient $r$: between 0 and 1, closer to 1 is better.
+
+ * For regression on TV: 0.61
+ * For regression on radio: 0.33
+ * For regression on newspaper: 0.05
+
+```{r}
+Advertising %>% select(TV, sales) %>% cor()
+(0.7822244)^2
+```
+
+## Finding things in the R output
+
+```{r}
+fit <- lm(sales ~ TV, data = Advertising)
+summary(fit)
+```

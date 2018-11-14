@@ -1,0 +1,123 @@
+---
+title: "Linear Regression Lab Wrap-Up"
+author: "Evan L. Ray"
+date: "November 12, 2018"
+output: ioslides_presentation
+---
+
+<script type="text/x-mathjax-config"> 
+    MathJax.Hub.Config({ 
+        "HTML-CSS": { scale: 90, linebreaks: { automatic: true } }, 
+        SVG: { linebreaks: { automatic:true } }, 
+        displayAlign: "left" });
+</script>
+
+<style>
+  .col2 {
+    columns: 2 200px;         /* number of columns and width in pixels*/
+    -webkit-columns: 2 200px; /* chrome, safari */
+    -moz-columns: 2 200px;    /* firefox */
+  }
+  .col3 {
+    columns: 3 100px;
+    -webkit-columns: 3 100px;
+    -moz-columns: 3 100px;
+  }
+  .MathJax {
+    font-size: 0.9em;
+  }
+</style>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});
+</script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+require(ggplot2)
+require(dplyr)
+require(tidyr)
+require(readr)
+```
+
+## Question
+
+Is there increasing severity of wildfires, as measured by average number of acres burned per fire?
+
+```{r, message=FALSE, echo = FALSE}
+wildfires <- read_csv("https://mhc-stat140-2017.github.io/data/sdm4/Wildfires_2012.csv")
+names(wildfires) <- c("num_fires", "years_since_1985", "ave_acres_burned")
+wildfires <- mutate(wildfires, year = years_since_1985 + 1985)
+wildfires <- arrange(wildfires, year)
+```
+
+
+```{r, echo = FALSE}
+lm_fit <- lm(ave_acres_burned ~ years_since_1985, data = wildfires)
+```
+
+```{r, echo = FALSE, fig.width=3.5, fig.height=4}
+ggplot() +
+  geom_point(aes(x = years_since_1985, y = ave_acres_burned), data = wildfires) +
+  geom_abline(intercept = coef(lm_fit)[1], slope = coef(lm_fit)[2]) +
+  coord_cartesian(xlim = range(wildfires$years_since_1985), ylim = c(0, 110))
+```
+
+## Interpretation of Slope
+
+```{r, echo = TRUE}
+lm_fit <- lm(ave_acres_burned ~ years_since_1985, data = wildfires)
+coef(lm_fit)
+```
+* For each additional year since 1985, the predicted number of acres burned increases by 2.22 acres.
+
+```{r, echo = TRUE}
+lm_fit_year <- lm(ave_acres_burned ~ year, data = wildfires)
+coef(lm_fit_year)
+```
+* For each additional year, the predicted number of acres burned increases by 2.22 acres.
+
+## Interpretation of Intercept
+
+```{r, message=FALSE, echo = FALSE}
+wildfires <- read_csv("https://mhc-stat140-2017.github.io/data/sdm4/Wildfires_2012.csv")
+names(wildfires) <- c("num_fires", "years_since_1985", "ave_acres_burned")
+wildfires <- mutate(wildfires, year = years_since_1985 + 1985)
+wildfires <- arrange(wildfires, year)
+```
+
+```{r, echo = TRUE}
+lm_fit <- lm(ave_acres_burned ~ years_since_1985, data = wildfires)
+coef(lm_fit)
+```
+* Predicted average number of acres burned in 1985 is 19.6
+
+```{r, echo = TRUE}
+lm_fit_year <- lm(ave_acres_burned ~ year, data = wildfires)
+coef(lm_fit_year)
+```
+* Predicted average number of acres burned in year 0 is -4390
+
+## What's going on?
+
+<div class="col2">
+
+```{r, echo = FALSE, fig.width=3.5, fig.height=4}
+ggplot() +
+  geom_point(aes(x = years_since_1985, y = ave_acres_burned), data = wildfires) +
+  geom_abline(intercept = coef(lm_fit)[1], slope = coef(lm_fit)[2]) +
+  coord_cartesian(xlim = range(wildfires$years_since_1985), ylim = c(0, 110))
+```
+
+
+```{r, echo = FALSE, fig.width=3.5, fig.height=4}
+ggplot() +
+  geom_point(aes(x = year, y = ave_acres_burned), data = wildfires) +
+  geom_abline(intercept = coef(lm_fit_year)[1], slope = coef(lm_fit_year)[2]) +
+  coord_cartesian(xlim = c(0, 2017), ylim = c(-6000, 2000))
+```
+</div>
+
+## Never Extrapolate Beyond the Data
+
+[An Important Message](https://www.causeweb.org/cause/sites/default/files/resources/fun/videos/How%20Far%20He%E2%80%99ll%20Go%20-%20Final.mp4)
