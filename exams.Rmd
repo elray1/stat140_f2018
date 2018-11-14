@@ -36,3 +36,11 @@ Review materials for quizzes and exams will be posted here.
 | Quiz    | Sample Quiz: [pdf](exams/q3/sample_quiz3.pdf)               | 2018-10-29    |
 |         | Sample Solutions: [pdf](exams/q3/sample_quiz3_sol.pdf)      |               |
 +---------+-------------------------------------------------------------+---------------+
+| Midterm | Covers material from homework assignments 6 and 7.          | 2018-11-19    |
+|         | You may bring 2 double-sided 8.5 by 11 inch sheets of paper |               |
+|         | with notes to the in-class portion.                         |               |
+|         | **Please also bring a calculator.**                         |               |
+|         |                                                             |               |
+|         | Sample Exam:                                                |               |
+|         | [pdf](exams/exam02/practice02/practice_exam02.pdf)          |               |
++---------+-------------------------------------------------------------+---------------+
