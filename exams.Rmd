@@ -43,4 +43,7 @@ Review materials for quizzes and exams will be posted here.
 |         |                                                             |               |
 |         | Sample Exam:                                                |               |
 |         | [pdf](exams/exam02/practice02/practice_exam02.pdf)          |               |
+|         |                                                             |               |
+|         | Sample Exam Solutions:                                      |               |
+|         | [pdf](exams/exam02/practice02/practice_exam02_sol.pdf)      |               |
 +---------+-------------------------------------------------------------+---------------+
