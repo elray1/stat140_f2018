@@ -31,3 +31,9 @@ title: "Homework"
 |              | Type II errors, and the relationship between  |           |       |
 |              | confidence intervals and hypothesis tests.    |           |       |
 +--------------+-----------------------------------------------+-----------+-------+
+|    8         | Homework assignment on Gryd covering          | 12/5/2018 |  1    |
+|              | "simple" linear regression.                   |           |       |
++--------------+-----------------------------------------------+-----------+-------+
+|    9         | Homework assignment on Gryd covering          | 12/10/2018|  1    |
+|              | "simple" linear regression.                   |           |       |
++--------------+-----------------------------------------------+-----------+-------+

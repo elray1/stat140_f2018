@@ -326,7 +326,7 @@ make_week_box("week9", FALSE, "Week 9: Oct 29 -- Nov 2",
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week10", TRUE, "Week 10: Nov 5 -- 9",
+make_week_box("week10", FALSE, "Week 10: Nov 5 -- 9",
 "
 
 #### Mon, Nov 5
@@ -353,7 +353,7 @@ make_week_box("week10", TRUE, "Week 10: Nov 5 -- 9",
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week11", TRUE, "Week 11: Nov 12 -- 16",
+make_week_box("week11", FALSE, "Week 11: Nov 12 -- 16",
 "
 
 #### Mon, Nov 12
@@ -398,14 +398,28 @@ make_week_box("week12", FALSE, "Week 12: Nov 19 -- 23 (Thanksgiving)",
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week13", FALSE, "Week 13: Nov 26 -- 30",
+make_week_box("week13", TRUE, "Week 13: Nov 26 -- 30",
 "
 
 #### Mon, Nov 26
+ * **In class**, we will work on:
+    * Inference for linear regression: [pdf](materials/20181126_slr_sampling_dist/20181126_regression_inference.pdf)
+    * Summary of things related to linear regression so far: [pdf](materials/20181126_slr_sampling_dist/20181126_regression_summary.pdf)
+    * Lab 19 on Gryd
+ * **After class**, please:
+    * Work on Homework 8, due Wed Dec 5
 
 #### Wed, Nov 28
+ * **In class**, we will work on:
+    * Inference for linear regression
+ * **After class**, please:
+    * Work on Homework 8, due Wed Dec 5
 
 #### Fri, Nov 30
+ * **In class**, we will work on:
+    * More about linear regression
+ * **After class**, please:
+    * Work on Homework 8, due Wed Dec 5
 "
 )
 ```
@@ -415,10 +429,23 @@ make_week_box("week14", FALSE, "Week 14: Dec 3 -- 7",
 "
 
 #### Mon, Dec 3
+ * **In class**, we will work on:
+    * More about linear regression
+ * **After class**, please:
+    * Work on Homework 8, due Wed Dec 5
 
 #### Wed, Dec 5
+ * **Homework 8 due today!!**
+ * **In class**, we will work on:
+    * More about linear regression
+ * **After class**, please:
+    * Work on Homework 9, due Mon Dec 10
 
 #### Fri, Dec 7
+ * **In class**, we will work on:
+    * More about linear regression
+ * **After class**, please:
+    * Work on Homework 9, due Mon Dec 10
 "
   )
 ```
@@ -428,6 +455,7 @@ make_week_box("week15", FALSE, "Week 15: Dec 10",
 "
 
 #### Mon, Dec 10
+ * **Homework 9 due today!!**
 "
   )
 ```

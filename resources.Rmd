@@ -10,3 +10,4 @@ title: "Resources"
     * Data wrangling cheat sheet (we will only use a small amount of the stuff discussed here): [pdf](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
  * R Commands for Inference about Population Proportions:
     * My summary: [pdf](resources/inference_proportions/inference_proportions.pdf)
+ * Summary of things related to linear regression: [pdf](materials/20181126_slr_sampling_dist/20181126_regression_summary.pdf)
