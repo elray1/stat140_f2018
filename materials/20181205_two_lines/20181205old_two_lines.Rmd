@@ -1,0 +1,211 @@
+---
+title: "Regression -- Two Lines"
+author: "Evan L. Ray"
+date: "October 11, 2017"
+output: ioslides_presentation
+---
+
+<script type="text/x-mathjax-config"> 
+    MathJax.Hub.Config({ 
+        "HTML-CSS": { scale: 90, linebreaks: { automatic: true } }, 
+        SVG: { linebreaks: { automatic:true } }, 
+        displayAlign: "left" });
+</script>
+
+<style>
+  .col2 {
+    columns: 2 200px;         /* number of columns and width in pixels*/
+    -webkit-columns: 2 200px; /* chrome, safari */
+    -moz-columns: 2 200px;    /* firefox */
+  }
+  .col3 {
+    columns: 3 100px;
+    -webkit-columns: 3 100px;
+    -moz-columns: 3 100px;
+  }
+  .MathJax {
+    font-size: 0.9em;
+  }
+</style>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});
+</script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+require(ggplot2)
+require(dplyr)
+require(tidyr)
+require(readr)
+```
+
+## Crocodiles!!
+
+* Measurements of
+    * length of crocodile's body in cm
+    * length of crocodile's head in cm
+    * crocodile species (Australian or Indian)
+
+```{r, echo = FALSE, message = FALSE}
+require(readr)
+
+set.seed(123)
+crocs <- read_csv("https://mhc-stat140-2017.github.io/data/sdm4/Crocodile_lengths.csv") %>%
+  mutate(Species = factor(Species, levels = c("Australian", "Indian"))) %>%
+  sample_frac(size = 1) %>%
+  as.data.frame()
+```
+
+```{r, echo = TRUE}
+head(crocs)
+```
+
+## A first plot
+
+```{r, echo = TRUE, fig.height=3, fig.width=8}
+ggplot() +
+  geom_point(mapping = aes(x = Body, y = Head),
+    data = crocs) +
+  geom_smooth(mapping = aes(x = Body, y = Head),
+    data = crocs,
+    method = "lm",
+    se = FALSE)
+```
+
+## Residuals Density Plot
+
+```{r, echo = FALSE}
+one_line_fit <- lm(Head ~ Body, data = crocs)
+crocs2 <- mutate(crocs,
+  residual = residuals(one_line_fit))
+ggplot() +
+  geom_density(mapping = aes(x = residual), data = crocs2)
+```
+
+## A second plot
+
+```{r, echo = TRUE, fig.height=3, fig.width=8}
+ggplot() +
+  geom_point(mapping = aes(x = Body, y = Head, color = Species),
+    data = crocs) +
+  geom_smooth(mapping = aes(x = Body, y = Head, color = Species),
+    data = crocs,
+    method = "lm",
+    se = FALSE)
+```
+
+## Residuals Density Plot -- Two Lines
+
+```{r, echo = FALSE}
+two_lines_fit <- lm(Head ~ Species * Body, data = crocs)
+crocs2 <- mutate(crocs,
+  residual = residuals(two_lines_fit))
+ggplot() +
+  geom_density(mapping = aes(x = residual), data = crocs2)
+```
+
+
+## Fitting Two Parallel Lines (Same Slope)
+
+* Our Goal: Equations for two lines
+    * Predicted Head Length for Australian Crocs  
+    $\qquad = b_0^{Australian}$ + $b_{1}$ (Body Length)
+    * Predicted Head Length for Indian Crocs  
+    $\qquad = b_0^{Indian}$ + $b_{1}$ (Body Length)
+
+```{r, echo = TRUE}
+parallel_lines_fit <- lm(Head ~ Species + Body, data = crocs)
+coef(parallel_lines_fit)
+```
+
+* R gives us a single combined equation:
+    * Predicted Head Length =  
+    $\qquad$ 2.27 + 8.89 SpeciesIndian + 0.13 (Body Length)
+
+
+## Indicator Variables
+
+* Behind the scenes, R creates a new **indicator variable** called `SpeciesIndian`.
+    * Equals 1 if the species is "Indian"
+    * Equals 0 otherwise (in this case, that means the species is "Australian")
+* R doesn't modify the data frame, but it would look like this:
+```{r, echo = FALSE}
+crocs <- mutate(crocs,
+  SpeciesIndian = as.integer(Species == "Indian"))
+```
+
+```{r, echo = TRUE}
+head(crocs)
+```
+
+
+## Back to the Equations
+
+* Two slides ago, we got this equation from R:
+    * Predicted Head Length  
+    $\qquad$ = 2.27 + 8.89 `SpeciesIndian` + 0.13 (Body Length)
+
+* For an Australian crocodile, `SpeciesIndian` = 0, so we get
+    * Predicted Head Length  
+    $\qquad$ = 2.27 + 0.13 (Body Length)
+
+* For an Indian crocodile, `SpeciesIndian` = 1, so we get
+    * Predicted Head Length  
+    $\qquad$ = 2.27 + 8.89 + 0.13 (Body Length)  
+    $\qquad$ = 11.16 + 0.13 (Body Length)
+
+## Interpretation of Coefficients
+
+* Predicted Head Length  
+  $\qquad$ = 2.27 + 8.89 `SpeciesIndian` + 0.13 (Body Length)
+
+* Interpretation of intercept: The predicted head length for an Australian crocodile with a body length of 0cm is 2.27cm.
+
+* Interpretation of the coefficient for `SpeciesIndian`: For a given body length, the predicted head length for an Indian crocodile is 8.89 cm longer than the predicted head length for an Australian crocodile.
+
+* Interpretation of coefficient for body length is as usual: for each 1cm increase in body length, predicted head length increases by 0.13 cm.
+
+## Two Lines with Different Slopes
+
+* In the formula for `lm`, we use `Species * Body` instead of `Species + Body`:
+
+```{r, echo = TRUE}
+two_lines_fit <- lm(Head ~ Species * Body, data = crocs)
+coef(two_lines_fit)
+```
+
+* Combined equation:
+    * Predicted Head Length =  
+    $\qquad$ 3.463 + 7.075 `SpeciesIndian` +  
+    $\qquad$ 0.125 `Body` + 0.006 `SpeciesIndian` * `Body`
+
+
+## Separate Equations for Each Species
+
+* Combined equation:
+    * Predicted Head Length =  
+    $\qquad$ 3.463 + 7.075 `SpeciesIndian` +  
+    $\qquad$ 0.125 `Body` + 0.006 `SpeciesIndian` * `Body`
+
+* For an Australian crocodile, `SpeciesIndian` = 0, so we get
+    * Predicted Head Length  
+    $\qquad$ = 3.463 + 0.125 * `Body`
+
+* For an Indian crocodile, `SpeciesIndian` = 1, so we get
+    * Predicted Head Length  
+    $\qquad$ = 3.463 + 7.075 + 0.125 * `Body` + 0.006 * `Body`  
+    $\qquad$ = 10.538 + 0.131 * `Body`
+
+## Interpretations of Coefficients from R
+
+* Predicted Head Length = 3.463 + 7.075 `SpeciesIndian` +  
+    $\qquad$ 0.125 `Body` + 0.006 `SpeciesIndian` * `Body`
+
+* Intercept: The predicted head length for an Australian crocodile with a body length of 0cm is 3.463cm.
+
+* `SpeciesIndian`: The predicted head length for an Indian crocodile with a body length of 0cm is 7.075cm larger than the predicted head length for an Australian crocodile with a body length of 0cm.
+
+* `Body`: For each 1cm increase in body length of an Australian crocodile, the predicted head length increases by 0.13 cm.
+
+* `SpeciesIndian` * `Body`: For each 1cm increase in body length, the predicted head length of an Indian crocodile increases by 0.006cm more than the predicted head length of an Australian crocodile.

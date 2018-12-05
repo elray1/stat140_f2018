@@ -425,7 +425,7 @@ make_week_box("week13", TRUE, "Week 13: Nov 26 -- 30",
 ```
 
 ```{r, echo = FALSE, results='asis'}
-make_week_box("week14", FALSE, "Week 14: Dec 3 -- 7",
+make_week_box("week14", TRUE, "Week 14: Dec 3 -- 7",
 "
 
 #### Mon, Dec 3
@@ -437,7 +437,7 @@ make_week_box("week14", FALSE, "Week 14: Dec 3 -- 7",
 #### Wed, Dec 5
  * **Homework 8 due today!!**
  * **In class**, we will work on:
-    * More about linear regression
+    * Fitting two lines: [pdf](materials/20181205_two_lines/20181205_two_lines.pdf)
  * **After class**, please:
     * Work on Homework 9, due Mon Dec 10
 
